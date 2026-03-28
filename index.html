@@ -4,149 +4,185 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Natural Science — Year 5</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --blue:#1a6faa;--blue-light:#e3f0fa;--blue-mid:#378ADD;
-  --green:#3a7d2e;--green-light:#eaf5e3;
-  --teal:#0e7a6e;--teal-light:#e0f4f1;
-  --amber:#b56a00;--amber-light:#fff3e0;
-  --coral:#c0392b;--coral-light:#fdecea;
-  --purple:#5c3d9e;--purple-light:#ede8fb;
-  --gray:#444;--gray-light:#f5f5f5;--gray-mid:#e0e0e0;
+  --blue:#1a6faa;--blue-light:#e3f0fa;--blue-mid:#378ADD;--blue-dark:#0e4a73;
+  --teal:#0e7a6e;--teal-light:#e0f4f1;--teal-mid:#1aab9b;
+  --green:#3a7d2e;--green-light:#eaf5e3;--green-mid:#5aad4a;
+  --amber:#b56a00;--amber-light:#fff3e0;--amber-mid:#e08a1a;
+  --purple:#5c3d9e;--purple-light:#ede8fb;--purple-mid:#7c5abf;
+  --coral:#c0392b;--coral-light:#fdecea;--coral-mid:#e05545;
+  --gray:#444;--gray-light:#f5f5f5;--gray-mid:#e0e0e0;--gray-dark:#888;
   --text:#1a1a1a;--text2:#555;--text3:#888;
-  --radius:12px;--radius-sm:8px;
-  --shadow:0 2px 12px rgba(0,0,0,0.08);
+  --radius:14px;--radius-sm:8px;--radius-lg:20px;
+  --shadow:0 2px 16px rgba(0,0,0,0.09);--shadow-sm:0 1px 6px rgba(0,0,0,0.07);
 }
-body{font-family:'Nunito Sans',sans-serif;background:#f0f4f8;color:var(--text);min-height:100vh}
-h1,h2,h3,.card-term{font-family:'Nunito',sans-serif}
+body{font-family:'Nunito Sans',sans-serif;background:#eef2f7;color:var(--text);min-height:100vh}
+h1,h2,h3,h4,.card-term,.topic-name{font-family:'Nunito',sans-serif}
 
 /* HEADER */
-.app-header{background:#fff;border-bottom:2px solid var(--blue-light);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
-.app-logo{display:flex;align-items:center;gap:10px}
-.app-logo-icon{width:36px;height:36px;background:var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-family:'Nunito',sans-serif;font-weight:800}
-.app-logo-text{font-family:'Nunito',sans-serif;font-weight:800;font-size:17px;color:var(--text)}
-.app-logo-sub{font-size:12px;color:var(--text3);font-weight:400}
-.lang-toggle{display:flex;gap:4px;background:var(--gray-light);border-radius:20px;padding:3px}
-.lang-btn{padding:5px 14px;font-size:13px;font-weight:700;border:none;border-radius:16px;cursor:pointer;background:transparent;color:var(--text3);font-family:'Nunito',sans-serif;transition:all .2s}
-.lang-btn.active{background:#fff;color:var(--blue);box-shadow:0 1px 4px rgba(0,0,0,0.12)}
+.app-header{background:#fff;border-bottom:1px solid var(--gray-mid);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:var(--shadow-sm)}
+.logo-wrap{display:flex;align-items:center;gap:10px}
+.logo-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--blue),var(--teal-mid));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.logo-text{font-family:'Nunito',sans-serif;font-weight:900;font-size:16px;color:var(--text);line-height:1.1}
+.logo-sub{font-size:11px;color:var(--text3);font-weight:600;letter-spacing:.3px}
+.lang-toggle{display:flex;gap:3px;background:#f0f0f0;border-radius:20px;padding:3px}
+.lang-btn{padding:5px 14px;font-size:12px;font-weight:800;border:none;border-radius:16px;cursor:pointer;background:transparent;color:var(--text3);font-family:'Nunito',sans-serif;transition:all .2s}
+.lang-btn.active{background:#fff;color:var(--blue);box-shadow:0 1px 5px rgba(0,0,0,0.13)}
 
-/* TOPIC TABS */
-.topic-bar{background:#fff;padding:0 16px;overflow-x:auto;display:flex;gap:4px;border-bottom:1px solid var(--gray-mid);scrollbar-width:none}
+/* TOPIC BAR */
+.topic-bar{background:#fff;border-bottom:1px solid var(--gray-mid);padding:0 12px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
 .topic-bar::-webkit-scrollbar{display:none}
-.topic-tab{padding:12px 16px;font-size:13px;font-weight:700;font-family:'Nunito',sans-serif;border:none;background:transparent;cursor:pointer;color:var(--text3);white-space:nowrap;border-bottom:3px solid transparent;transition:all .2s}
+.topic-tab{padding:11px 15px;font-size:12px;font-weight:800;font-family:'Nunito',sans-serif;border:none;background:transparent;cursor:pointer;color:var(--text3);white-space:nowrap;border-bottom:3px solid transparent;transition:all .2s;display:flex;align-items:center;gap:6px}
+.topic-tab .t-emoji{font-size:14px}
 .topic-tab.active{color:var(--blue);border-bottom-color:var(--blue)}
 
-/* ACTIVITY TABS */
-.act-bar{padding:14px 16px 0;display:flex;gap:8px;flex-wrap:wrap}
-.act-tab{padding:7px 16px;font-size:13px;font-weight:700;font-family:'Nunito',sans-serif;border:2px solid var(--gray-mid);border-radius:20px;background:#fff;cursor:pointer;color:var(--text2);transition:all .2s}
-.act-tab.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+/* MAIN AREA */
+.main{max-width:720px;margin:0 auto;padding:20px 16px 60px}
 
-/* MAIN */
-.main{max-width:700px;margin:0 auto;padding:20px 16px 40px}
+/* HOME SCREEN */
+.home-screen{animation:fadeIn .3s ease}
+.home-hero{background:linear-gradient(135deg,var(--blue-dark),var(--blue),var(--teal-mid));border-radius:var(--radius-lg);padding:28px 24px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden}
+.home-hero::after{content:'💧';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:72px;opacity:.18}
+.home-hero h1{font-size:22px;font-weight:900;margin-bottom:6px}
+.home-hero p{font-size:14px;opacity:.88;line-height:1.6;max-width:380px}
+.study-plan{background:#fff;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-sm);margin-bottom:20px}
+.study-plan h2{font-size:16px;font-weight:800;color:var(--text);margin-bottom:4px}
+.study-plan .sp-sub{font-size:13px;color:var(--text3);margin-bottom:16px}
+.sp-step{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #f0f0f0}
+.sp-step:last-child{border-bottom:none;padding-bottom:0}
+.sp-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;font-family:'Nunito',sans-serif;flex-shrink:0;color:#fff}
+.sp-info h3{font-size:14px;font-weight:800;color:var(--text);margin-bottom:2px}
+.sp-info p{font-size:12px;color:var(--text2);line-height:1.5}
+.sp-tip{background:var(--blue-light);border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;color:var(--blue-dark);font-weight:600;border-left:3px solid var(--blue-mid)}
+.topic-cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.topic-card{background:#fff;border-radius:var(--radius);padding:16px;box-shadow:var(--shadow-sm);cursor:pointer;transition:all .2s;border:2px solid transparent;display:flex;flex-direction:column;gap:8px}
+.topic-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.topic-card .tc-emoji{font-size:28px}
+.topic-card .tc-num{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.topic-card h3{font-size:14px;font-weight:800;color:var(--text);line-height:1.3}
+.topic-card p{font-size:12px;color:var(--text2);line-height:1.4}
+.tc-start{font-size:12px;font-weight:800;margin-top:4px}
+
+/* INTRO SCREEN */
+.intro-screen{animation:fadeIn .3s ease}
+.intro-back{display:flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;font-size:13px;font-weight:700;color:var(--text3);font-family:'Nunito',sans-serif;margin-bottom:16px;padding:0}
+.intro-back:hover{color:var(--text)}
+.intro-hero{border-radius:var(--radius-lg);padding:26px 24px;color:#fff;margin-bottom:18px;position:relative;overflow:hidden}
+.intro-hero::after{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:64px;opacity:.2}
+.intro-hero h2{font-size:20px;font-weight:900;margin-bottom:6px}
+.intro-hero .intro-order{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;opacity:.8;margin-bottom:8px}
+.intro-hero p{font-size:14px;opacity:.9;line-height:1.6;max-width:420px}
+.reading-card{background:#fff;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow-sm);margin-bottom:16px}
+.reading-card h3{font-size:15px;font-weight:800;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.reading-card h3 span{font-size:18px}
+.reading-para{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:10px}
+.reading-para:last-child{margin-bottom:0}
+.reading-highlight{background:var(--blue-light);border-radius:var(--radius-sm);padding:12px 16px;font-size:13px;color:var(--blue-dark);font-weight:700;margin:12px 0;border-left:3px solid var(--blue-mid);line-height:1.6}
+.reading-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.reading-list li{display:flex;gap:10px;font-size:14px;color:var(--text2);line-height:1.6}
+.reading-list li::before{content:'→';color:var(--blue-mid);font-weight:800;flex-shrink:0;margin-top:1px}
+.fun-fact{border-radius:var(--radius-sm);padding:14px 16px;font-size:13px;font-weight:700;margin:12px 0;line-height:1.6}
+.intro-cta{width:100%;padding:14px;font-size:15px;font-weight:800;font-family:'Nunito',sans-serif;border:none;border-radius:var(--radius);cursor:pointer;color:#fff;transition:all .2s;margin-top:4px}
+.intro-cta:hover{opacity:.9;transform:translateY(-1px)}
+
+/* ACTIVITY SCREEN */
+.act-screen{animation:fadeIn .3s ease}
+.act-back{display:flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;font-size:13px;font-weight:700;color:var(--text3);font-family:'Nunito',sans-serif;margin-bottom:14px;padding:0}
+.act-back:hover{color:var(--text)}
+.act-header{background:#fff;border-radius:var(--radius);padding:14px 18px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-sm)}
+.act-header-left h3{font-size:15px;font-weight:800;color:var(--text)}
+.act-header-left p{font-size:12px;color:var(--text3)}
+.act-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.act-tab{padding:7px 14px;font-size:12px;font-weight:800;font-family:'Nunito',sans-serif;border:2px solid var(--gray-mid);border-radius:20px;background:#fff;cursor:pointer;color:var(--text2);transition:all .2s}
+.act-tab.active{color:#fff;border-color:transparent}
 
 /* SECTIONS */
 .act-section{display:none}
 .act-section.active{display:block}
 
-/* TOPIC HEADER */
-.topic-header{background:#fff;border-radius:var(--radius);padding:16px 20px;margin-bottom:18px;border-left:4px solid var(--blue);box-shadow:var(--shadow)}
-.topic-header h2{font-size:17px;font-weight:800;color:var(--blue);margin-bottom:4px}
-.topic-header p{font-size:13px;color:var(--text2);line-height:1.5}
-
 /* FLASHCARDS */
-.fc-wrap{perspective:900px;height:210px;cursor:pointer;margin-bottom:16px}
+.fc-wrap{perspective:900px;height:200px;cursor:pointer;margin-bottom:14px}
 .fc-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .fc-inner.flipped{transform:rotateY(180deg)}
-.fc-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--shadow)}
-.fc-front{background:#fff;border:2px solid var(--blue-light)}
-.fc-back{background:var(--blue-light);transform:rotateY(180deg);border:2px solid var(--blue-mid)}
-.fc-badge{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin-bottom:10px;font-family:'Nunito',sans-serif}
-.card-term{font-size:22px;font-weight:800;color:var(--text);line-height:1.3}
-.card-def{font-size:15px;font-weight:600;color:var(--blue);line-height:1.5;margin-bottom:8px}
-.card-hint{font-size:13px;color:var(--text2);line-height:1.5;font-style:italic}
-.fc-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:4px}
-.fc-count{font-size:13px;color:var(--text3);font-weight:700;min-width:60px;text-align:center}
-.btn-circle{width:38px;height:38px;border-radius:50%;border:2px solid var(--gray-mid);background:#fff;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.fc-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.fc-front{background:#fff;border:2px solid var(--gray-mid);box-shadow:var(--shadow-sm)}
+.fc-back{transform:rotateY(180deg);box-shadow:var(--shadow-sm)}
+.fc-badge{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin-bottom:10px;font-family:'Nunito',sans-serif}
+.card-term{font-size:20px;font-weight:900;color:var(--text);line-height:1.3}
+.card-def{font-size:14px;font-weight:700;line-height:1.5;margin-bottom:8px}
+.card-hint{font-size:12px;color:var(--text2);line-height:1.5;font-style:italic}
+.fc-nav{display:flex;align-items:center;justify-content:center;gap:12px}
+.fc-count{font-size:13px;color:var(--text3);font-weight:800;min-width:52px;text-align:center;font-family:'Nunito',sans-serif}
+.btn-circle{width:36px;height:36px;border-radius:50%;border:2px solid var(--gray-mid);background:#fff;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .2s;font-weight:700}
 .btn-circle:hover{border-color:var(--blue);color:var(--blue)}
-.fc-hint-text{font-size:12px;color:var(--text3);text-align:center;margin-top:8px}
+.fc-hint-text{font-size:11px;color:var(--text3);text-align:center;margin-top:8px;font-weight:600}
 
 /* QUIZ */
-.quiz-prog-bar{background:var(--gray-mid);border-radius:10px;height:6px;margin-bottom:16px;overflow:hidden}
-.quiz-prog-fill{background:var(--blue);height:6px;border-radius:10px;transition:width .4s}
-.quiz-prog-text{font-size:12px;color:var(--text3);font-weight:700;margin-bottom:8px}
-.quiz-q{font-size:16px;font-weight:700;color:var(--text);margin-bottom:16px;line-height:1.5;font-family:'Nunito',sans-serif}
-.quiz-opts{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-.quiz-opt{padding:13px 16px;border:2px solid var(--gray-mid);border-radius:var(--radius-sm);cursor:pointer;font-size:14px;font-weight:600;color:var(--text);background:#fff;text-align:left;font-family:'Nunito Sans',sans-serif;transition:all .2s}
+.quiz-prog-wrap{margin-bottom:14px}
+.quiz-prog-text{font-size:11px;font-weight:800;color:var(--text3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.quiz-prog-bar{background:var(--gray-mid);border-radius:10px;height:6px;overflow:hidden}
+.quiz-prog-fill{height:6px;border-radius:10px;transition:width .4s}
+.quiz-q{font-size:15px;font-weight:800;color:var(--text);margin-bottom:14px;line-height:1.5;font-family:'Nunito',sans-serif}
+.quiz-opts{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.quiz-opt{padding:12px 16px;border:2px solid var(--gray-mid);border-radius:var(--radius-sm);cursor:pointer;font-size:13px;font-weight:700;color:var(--text);background:#fff;text-align:left;font-family:'Nunito Sans',sans-serif;transition:all .2s}
 .quiz-opt:hover:not(:disabled){border-color:var(--blue-mid);background:var(--blue-light)}
 .quiz-opt.correct{background:#eaf5e3;border-color:#3a7d2e;color:#27500A}
 .quiz-opt.wrong{background:#fdecea;border-color:#c0392b;color:#7a1a10}
-.quiz-fb{padding:12px 16px;border-radius:var(--radius-sm);font-size:14px;font-weight:600;margin-bottom:12px;display:none}
+.quiz-fb{padding:11px 15px;border-radius:var(--radius-sm);font-size:13px;font-weight:700;margin-bottom:10px;display:none;line-height:1.5}
 .quiz-fb.show{display:block}
 .quiz-fb.ok{background:#eaf5e3;color:#27500A}
 .quiz-fb.no{background:#fdecea;color:#7a1a10}
-.score-box{text-align:center;padding:32px 20px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow)}
-.score-circle{width:100px;height:100px;border-radius:50%;background:var(--blue-light);border:4px solid var(--blue);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 16px}
-.score-num{font-size:30px;font-weight:800;color:var(--blue);font-family:'Nunito',sans-serif;line-height:1}
-.score-denom{font-size:13px;color:var(--text3);font-weight:600}
-.score-msg{font-size:15px;font-weight:600;color:var(--text2);margin-bottom:20px}
+.score-box{text-align:center;padding:30px 20px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+.score-ring{width:96px;height:96px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 14px;border:4px solid}
+.score-num{font-size:28px;font-weight:900;font-family:'Nunito',sans-serif;line-height:1}
+.score-denom{font-size:12px;font-weight:700;opacity:.7}
+.score-msg{font-size:14px;font-weight:700;color:var(--text2);margin-bottom:18px}
 
 /* DRAG */
-.drag-inst{font-size:13px;color:var(--text2);margin-bottom:12px;font-weight:600}
-.drag-bank{display:flex;flex-wrap:wrap;gap:8px;padding:14px;border:2px dashed var(--gray-mid);border-radius:var(--radius);min-height:58px;margin-bottom:18px;background:#fff}
-.drag-chip{padding:7px 14px;font-size:13px;font-weight:700;border:2px solid var(--gray-mid);border-radius:20px;background:#fff;cursor:grab;color:var(--text);user-select:none;transition:all .2s;font-family:'Nunito',sans-serif}
+.drag-inst{font-size:13px;color:var(--text2);margin-bottom:10px;font-weight:700}
+.drag-bank{display:flex;flex-wrap:wrap;gap:7px;padding:12px;border:2px dashed var(--gray-mid);border-radius:var(--radius);min-height:54px;margin-bottom:14px;background:#fff}
+.drag-chip{padding:6px 13px;font-size:12px;font-weight:800;border:2px solid var(--gray-mid);border-radius:20px;background:#fff;cursor:grab;color:var(--text);user-select:none;transition:all .2s;font-family:'Nunito',sans-serif}
 .drag-chip:hover{border-color:var(--blue);background:var(--blue-light)}
-.drag-chip.dragging{opacity:.5}
 .drag-chip.correct{background:#eaf5e3;border-color:#3a7d2e;color:#27500A;cursor:default}
 .drag-chip.wrong{background:#fdecea;border-color:#c0392b;color:#7a1a10}
-.drop-zones{display:flex;flex-direction:column;gap:10px}
-.drop-zone{border:2px solid var(--gray-mid);border-radius:var(--radius-sm);padding:12px 14px;min-height:60px;background:#fff;transition:all .2s}
+.drop-zones{display:flex;flex-direction:column;gap:8px}
+.drop-zone{border:2px solid var(--gray-mid);border-radius:var(--radius-sm);padding:10px 12px;min-height:58px;background:#fff;transition:all .2s}
 .drop-zone.over{border-color:var(--blue-mid);background:var(--blue-light)}
-.dz-label{font-size:12px;font-weight:800;color:var(--blue);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;font-family:'Nunito',sans-serif}
-.dz-chips{display:flex;flex-wrap:wrap;gap:6px;min-height:30px}
+.dz-label{font-size:11px;font-weight:900;color:var(--blue);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;font-family:'Nunito',sans-serif}
+.dz-chips{display:flex;flex-wrap:wrap;gap:5px;min-height:28px}
 
 /* FILL */
-.fill-prog{font-size:12px;font-weight:700;color:var(--text3);margin-bottom:12px}
-.fill-sentence{font-size:16px;line-height:2.4;color:var(--text);font-weight:600;font-family:'Nunito',sans-serif}
-.blank-inp{border:none;border-bottom:3px solid var(--blue-mid);background:transparent;font-size:15px;font-weight:700;color:var(--text);width:140px;text-align:center;outline:none;font-family:'Nunito',sans-serif;padding:0 4px}
+.fill-prog{font-size:11px;font-weight:800;color:var(--text3);margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
+.fill-sentence{font-size:15px;line-height:2.4;color:var(--text);font-weight:700;font-family:'Nunito',sans-serif}
+.blank-inp{border:none;border-bottom:3px solid var(--blue-mid);background:transparent;font-size:14px;font-weight:800;color:var(--text);width:140px;text-align:center;outline:none;font-family:'Nunito',sans-serif;padding:0 4px}
 .blank-inp.correct{border-color:#3a7d2e;color:#27500A}
 .blank-inp.wrong{border-color:#c0392b;color:#7a1a10}
-.fill-fb{padding:10px 14px;border-radius:var(--radius-sm);font-size:14px;font-weight:600;margin-top:12px;display:none}
+.fill-fb{padding:10px 14px;border-radius:var(--radius-sm);font-size:13px;font-weight:700;margin-top:10px;display:none;line-height:1.5}
 .fill-fb.show{display:block}
 .fill-fb.ok{background:#eaf5e3;color:#27500A}
 .fill-fb.no{background:#fdecea;color:#7a1a10}
 
 /* BUTTONS */
-.btn{padding:9px 22px;font-size:14px;font-weight:700;font-family:'Nunito',sans-serif;border:2px solid var(--gray-mid);border-radius:20px;cursor:pointer;background:#fff;color:var(--text);transition:all .2s}
+.btn{padding:9px 20px;font-size:13px;font-weight:800;font-family:'Nunito',sans-serif;border:2px solid var(--gray-mid);border-radius:20px;cursor:pointer;background:#fff;color:var(--text);transition:all .2s}
 .btn:hover{border-color:var(--blue);color:var(--blue)}
-.btn-primary{background:var(--blue);color:#fff;border-color:var(--blue)}
-.btn-primary:hover{background:#155f94;border-color:#155f94;color:#fff}
-.btn-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.btn-primary{color:#fff;border-color:transparent}
+.btn-primary:hover{opacity:.9;color:#fff}
+.btn-row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
 
-/* TOPIC COLORS */
-.topic-0 .topic-header{border-left-color:var(--blue)} .topic-0 .act-tab.active{background:var(--blue);border-color:var(--blue)}
-.topic-0 .fc-back{background:var(--blue-light)} .topic-0 .card-def{color:var(--blue)}
-.topic-1 .topic-header{border-left-color:var(--teal)} .topic-1 .act-tab.active{background:var(--teal);border-color:var(--teal)}
-.topic-1 .fc-back{background:var(--teal-light)} .topic-1 .card-def{color:var(--teal)}
-.topic-2 .topic-header{border-left-color:var(--green)} .topic-2 .act-tab.active{background:var(--green);border-color:var(--green)}
-.topic-2 .fc-back{background:var(--green-light)} .topic-2 .card-def{color:var(--green)}
-.topic-3 .topic-header{border-left-color:var(--amber)} .topic-3 .act-tab.active{background:var(--amber);border-color:var(--amber)}
-.topic-3 .fc-back{background:var(--amber-light)} .topic-3 .card-def{color:var(--amber)}
-.topic-4 .topic-header{border-left-color:var(--purple)} .topic-4 .act-tab.active{background:var(--purple);border-color:var(--purple)}
-.topic-4 .fc-back{background:var(--purple-light)} .topic-4 .card-def{color:var(--purple)}
-.topic-5 .topic-header{border-left-color:var(--coral)} .topic-5 .act-tab.active{background:var(--coral);border-color:var(--coral)}
-.topic-5 .fc-back{background:var(--coral-light)} .topic-5 .card-def{color:var(--coral)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 <body>
 
 <div class="app-header">
-  <div class="app-logo">
-    <div class="app-logo-icon">💧</div>
+  <div class="logo-wrap">
+    <div class="logo-icon">💧</div>
     <div>
-      <div class="app-logo-text" id="hdr-title">Natural Science — Year 5</div>
-      <div class="app-logo-sub" id="hdr-sub">Water &amp; Ecosystems</div>
+      <div class="logo-text" id="hdr-title">Natural Science — Year 5</div>
+      <div class="logo-sub" id="hdr-sub">Water &amp; Ecosystems</div>
     </div>
   </div>
   <div class="lang-toggle">
@@ -156,509 +192,1084 @@ h1,h2,h3,.card-term{font-family:'Nunito',sans-serif}
 </div>
 
 <div class="topic-bar" id="topic-bar"></div>
-
-<div class="main" id="main-content"></div>
+<div class="main" id="main"></div>
 
 <script>
-var lang = 'en';
-var curTopic = 0;
-var curAct = 'flash';
+var lang='en', curTopic=-1, curAct='read', screen='home';
+var dragSrc=null;
+var state={};
 
-var TOPICS = {
-  en: [
-    { id:'t0', label:'Water Cycle', color:'topic-0',
-      desc:'The continuous movement of water through evaporation, condensation, precipitation and collection.',
-      flashcards:[
-        {term:'Evaporation',def:'Solar energy heats liquid water, turning it into water vapor (gas).',hint:'Example: puddles disappearing on a sunny day.'},
-        {term:'Condensation',def:'Water vapor cools in the atmosphere and forms clouds.',hint:'Example: water droplets on a cold glass.'},
-        {term:'Precipitation',def:'Water falls back to Earth as rain, snow, sleet, or hail.',hint:'All forms of water falling from clouds.'},
-        {term:'Collection / Runoff',def:'Water gathers in oceans, rivers, lakes or soaks into the ground.',hint:'The cycle starts again from here.'},
-        {term:'Transpiration',def:'Plants release water vapor through their leaves into the atmosphere.',hint:'Plants also contribute to the water cycle!'}
+// ─── CONTENT DATA ───────────────────────────────────────────────
+var CONTENT={
+en:[
+{
+  emoji:'☀️', color:'topic-1',
+  accent:'#0e7a6e', accentLight:'#e0f4f1', accentMid:'#1aab9b',
+  label:'Evaporation',
+  order:'Step 1 of 6',
+  heroDesc:'Learn how water changes from liquid to invisible gas — the very first step of everything!',
+  reading:[
+    {
+      title:'What is Evaporation?',icon:'🔬',
+      paras:[
+        'Have you ever left a glass of water outside on a hot day and come back to find less water in it? Where did it go? It didn\'t just disappear — it <strong>evaporated!</strong>',
+        'Evaporation is what happens when <strong>heat turns liquid water into an invisible gas</strong> called water vapor. The sun is like a giant heater that warms up water in oceans, lakes, rivers — and even puddles on the street!'
       ],
-      quiz:[
-        {q:'What process turns liquid water into water vapor?',opts:['Condensation','Precipitation','Evaporation','Transpiration'],ans:2},
-        {q:'What happens during condensation?',opts:['Water falls as rain','Water vapor forms clouds','Water soaks into the ground','The sun heats the ocean'],ans:1},
-        {q:'Which of the following is NOT a type of precipitation?',opts:['Rain','Snow','Evaporation','Hail'],ans:2},
-        {q:'Where does collected water go after precipitation?',opts:['Into the clouds','Back to space','Oceans, rivers, lakes or underground','Only underground'],ans:2},
-        {q:'What energy source drives evaporation?',opts:['Wind','Solar energy (the sun)','The moon','Rain'],ans:1},
-        {q:'Which process represents plants contributing to the water cycle?',opts:['Precipitation','Runoff','Condensation','Transpiration'],ans:3}
-      ],
-      dragZones:['Evaporation','Condensation','Precipitation','Collection / Runoff'],
-      dragItems:[
-        {text:'Sun heats water into vapor',zone:0},{text:'Vapor rises and cools to form clouds',zone:1},
-        {text:'Water falls as rain or snow',zone:2},{text:'Water flows into rivers and oceans',zone:3},
-        {text:'Liquid water becomes a gas',zone:0},{text:'Droplets gather to make clouds',zone:1}
-      ],
-      fills:[
-        {before:'During ',blank:'evaporation',after:', liquid water turns into water vapor.'},
-        {before:'When water vapor cools in the atmosphere, ',blank:'condensation',after:' occurs and clouds form.'},
-        {before:'Rain, snow and hail are all types of ',blank:'precipitation',after:'.'},
-        {before:'Water collected in rivers and oceans is called ',blank:'collection',after:' or runoff.'}
+      highlight:'Key idea: Evaporation = liquid water → invisible gas (water vapor), powered by heat.',
+      list:[
+        'The sun heats the surface of the water.',
+        'Water molecules (tiny, tiny pieces of water) start moving faster and faster.',
+        'The fastest molecules escape from the surface and become gas.',
+        'This invisible gas rises up into the air.'
       ]
     },
-    { id:'t1', label:'Evaporation', color:'topic-1',
-      desc:'Evaporation is a molecular process where heat makes water molecules escape from a liquid surface.',
-      flashcards:[
-        {term:'Evaporation',def:'Heat makes water molecules move faster until they break away and become gas.',hint:'Not boiling — it happens at the surface, below boiling point.'},
-        {term:'Energy Input',def:'Heat (thermal energy) speeds up water molecules so they can escape into the air.',hint:'The sun is the main heat source.'},
-        {term:'State Change',def:'Water changes from liquid to gas (water vapor) during evaporation.',hint:'The vapor is invisible — you cannot see it.'},
-        {term:'Invisible Journey',def:'Water vapor is an invisible gas that rises up into the atmosphere.',hint:'It eventually forms clouds through condensation.'},
-        {term:'Evaporation Facts',def:'It happens everywhere: drying clothes, sweat disappearing, steam from hot drinks.',hint:'Warmer + windier = faster evaporation.'}
+    {
+      title:'Evaporation in Everyday Life',icon:'🌞',
+      paras:[
+        'Evaporation is happening all around you, all the time! Here are some examples you\'ve probably seen:',
       ],
-      quiz:[
-        {q:'What makes water molecules speed up during evaporation?',opts:['Cold air','Heat (thermal energy)','Wind only','Gravity'],ans:1},
-        {q:'Is water vapor visible?',opts:['Yes, it looks like fog','Yes, it looks like steam','No, it is invisible','Only at night'],ans:2},
-        {q:'At what surface does evaporation happen?',opts:['Deep underwater','At the bottom of lakes','At the surface of the liquid','Only in oceans'],ans:2},
-        {q:'Which is true about evaporation?',opts:['It only happens when water boils','It needs very hot temperatures','It happens at temperatures below boiling','It only happens in the ocean'],ans:2},
-        {q:'Why do puddles disappear faster on warm windy days?',opts:['The wind blows water underground','Higher heat and wind speed up evaporation','Cold slows evaporation','Rain absorbs the puddle'],ans:1}
+      list:[
+        'Wet clothes drying on a clothesline — the water evaporates into the air.',
+        'Sweat disappearing from your skin — your body cools down through evaporation!',
+        'Steam rising from a hot cup of tea or soup.',
+        'A puddle after rain slowly disappearing on a sunny day.'
       ],
-      dragZones:['Cause','Process','Result'],
-      dragItems:[
-        {text:'Heat is added to liquid water',zone:0},{text:'Molecules speed up and break bonds',zone:1},
-        {text:'Water vapor rises into the air',zone:2},{text:'Sun provides thermal energy',zone:0},
-        {text:'Liquid changes to gas',zone:2},{text:'Bonds between molecules break',zone:1}
-      ],
-      fills:[
-        {before:'Evaporation happens at the ',blank:'surface',after:' of a liquid, not at the bottom.'},
-        {before:'Water vapor is an ',blank:'invisible',after:' gas that rises into the atmosphere.'},
-        {before:'The faster water molecules move, the quicker they ',blank:'evaporate',after:'.'},
-        {before:'Puddles disappear because the water ',blank:'evaporates',after:' into the air.'}
-      ]
+      funFact:'🌟 Fun fact: The warmer and windier it is, the faster water evaporates. That\'s why clothes dry faster on a hot, windy day!',
+      funColor:'#fff3e0', funText:'#7a4500'
     },
-    { id:'t2', label:'Salinity & Water Types', color:'topic-2',
-      desc:'Water is classified by its salt content. Salinity affects crops, soil health and ecosystems.',
-      flashcards:[
-        {term:'Freshwater',def:'Very low salt content (less than 1%). Found in lakes and rivers.',hint:'What we drink!'},
-        {term:'Brackish Water',def:'A mix of fresh and salt water. Found in estuaries (where rivers meet the sea).',hint:'In between fresh and salty.'},
-        {term:'Saltwater (Marine)',def:'High salt content (about 3.5%). Found in oceans and seas.',hint:'Most of Earth\'s water is saltwater.'},
-        {term:'Salt Stress',def:'Most crops cannot grow in water that is too salty.',hint:'Too much salt = plants struggle to survive.'},
-        {term:'Sterile Soil',def:'Too much salt in soil over time makes farmland unable to grow anything.',hint:'This is a major problem in dry regions.'}
+    {
+      title:'Important: Evaporation is NOT Boiling!',icon:'⚗️',
+      paras:[
+        'Evaporation happens <strong>at the surface</strong> of water, at normal temperatures — you don\'t need water to be boiling hot!',
+        'Boiling happens when the whole water gets extremely hot (100°C). Evaporation happens slowly, at the surface, even on a mild day.'
       ],
-      quiz:[
-        {q:'What is the salt content of saltwater (marine)?',opts:['Less than 1%','About 3.5%','About 10%','About 50%'],ans:1},
-        {q:'What is brackish water?',opts:['Pure freshwater','A mix of fresh and salt water','Very salty deep ocean water','Rainwater'],ans:1},
-        {q:'Where is freshwater found?',opts:['Oceans and seas','Estuaries','Lakes and rivers','The deep ocean'],ans:2},
-        {q:'How does high salinity affect plant roots?',opts:['It helps roots absorb more water','It pulls water OUT of roots','It makes roots grow faster','It has no effect'],ans:1},
-        {q:'What does "sterile soil" mean?',opts:['Soil with too much water','Soil that is too cold','Soil that cannot grow anything due to excess salt','Very fertile soil'],ans:2}
-      ],
-      dragZones:['Freshwater','Brackish Water','Saltwater'],
-      dragItems:[
-        {text:'Lakes and rivers',zone:0},{text:'Less than 1% salt',zone:0},
-        {text:'Where rivers meet the sea',zone:1},{text:'Mix of fresh and salt',zone:1},
-        {text:'Oceans and seas',zone:2},{text:'About 3.5% salt',zone:2}
-      ],
-      fills:[
-        {before:'Water with less than 1% salt is called ',blank:'freshwater',after:'.'},
-        {before:'Brackish water is found in ',blank:'estuaries',after:' where rivers meet the sea.'},
-        {before:'High salinity pulls water ',blank:'out',after:' of plant roots instead of in.'},
-        {before:'Soil that cannot grow anything due to too much salt is called ',blank:'sterile',after:' soil.'}
-      ]
-    },
-    { id:'t3', label:'Dry Seasons & Conservation', color:'topic-3',
-      desc:'Dry seasons reduce precipitation significantly, threatening water supplies and ecosystems.',
-      flashcards:[
-        {term:'Dry Season',def:'A period when precipitation (rain) decreases significantly.',hint:'Opposite of the rainy/wet season.'},
-        {term:'The Problem',def:'Without enough rain, water levels in lakes and aquifers drop dangerously.',hint:'The system cannot "recharge" fast enough.'},
-        {term:'Aquifer Recharge',def:'Rain soaks into the ground over a long time to refill underground water reserves.',hint:'This process is very slow — takes months or years.'},
-        {term:'Water Conservation',def:'Saving and reducing water use to protect supplies.',hint:'We must conserve water even when it rains!'},
-        {term:'Recharge Time',def:'Underground water supplies take a long time to refill after being depleted.',hint:'This is why conservation is so important.'}
-      ],
-      quiz:[
-        {q:'What happens to precipitation during a dry season?',opts:['It increases','It stays the same','It decreases significantly','It falls only as snow'],ans:2},
-        {q:'What does "recharge the system" mean?',opts:['Replacing water with electricity','Rain refilling lakes and aquifers','Cleaning water in a factory','Installing solar panels on lakes'],ans:1},
-        {q:'Why must we save water even when it is raining?',opts:['Rain is dirty','Underground supplies take a long time to refill','Rain is only temporary','Water tanks overflow easily'],ans:1},
-        {q:'What drops when there is not enough rain?',opts:['Air temperature','Water levels in lakes and aquifers','Soil temperature','Cloud cover'],ans:1},
-        {q:'What is water conservation?',opts:['Using as much water as possible','Drinking only bottled water','Saving and reducing water use','Filtering seawater'],ans:2}
-      ],
-      dragZones:['Cause of problem','Effect','Solution'],
-      dragItems:[
-        {text:'Precipitation decreases in dry season',zone:0},{text:'Water levels in lakes drop',zone:1},
-        {text:'Aquifers take a long time to refill',zone:1},{text:'Conserve water every day',zone:2},
-        {text:'Reduce water use at home',zone:2},{text:'Not enough rain to recharge',zone:0}
-      ],
-      fills:[
-        {before:'During a dry season, ',blank:'precipitation',after:' decreases significantly.'},
-        {before:'Water levels in lakes and ',blank:'aquifers',after:' drop when there is not enough rain.'},
-        {before:'Underground water supplies take a long ',blank:'time',after:' to refill.'},
-        {before:'We need to save water even when it rains because our underground supply needs to ',blank:'recharge',after:'.'}
-      ]
-    },
-    { id:'t4', label:'Water Biomes', color:'topic-4',
-      desc:'Water exists in many ecosystems: lentic, lotic, marine and wetlands — each with unique features.',
-      flashcards:[
-        {term:'Lentic Biomes',def:'Still (non-moving) water environments. Lentic = Lazy. Examples: ponds, lakes, swamps.',hint:'Still water = Lentic. Think: "Lazy Lake".'},
-        {term:'Lotic Biomes',def:'Flowing water environments. Lotic = ongoing. Examples: rivers, streams, creeks.',hint:'Moving water = Lotic. Think: "Lots of flow".'},
-        {term:'Marine Biomes',def:'Saltwater environments like oceans, seas and gulfs.',hint:'Cover over 70% of Earth\'s surface.'},
-        {term:'Gulf',def:'A large body of water almost surrounded by land with a small mouth opening to the ocean.',hint:'Warmer and shallower — great for coral reefs.'},
-        {term:'Aquifer',def:'A layer of underground rock or sand that stores water. Rainwater soaks down to refill it.',hint:'Humans drill wells into aquifers for drinking water.'}
-      ],
-      quiz:[
-        {q:'What does "lentic" mean?',opts:['Fast-moving water','Salty water','Still water','Frozen water'],ans:2},
-        {q:'Which is an example of a lotic biome?',opts:['A lake','A swamp','A pond','A river'],ans:3},
-        {q:'What is an aquifer?',opts:['A type of cloud','Underground rock that stores water','A salt water lake','A water treatment plant'],ans:1},
-        {q:'What makes gulfs good habitats?',opts:['They are very deep and cold','They are warm and shallow — good for coral reefs','They have no salt','They are frozen year round'],ans:1},
-        {q:'How do aquifers refill?',opts:['From rivers flowing into them','Rainwater soaks through soil into the ground','Snow melts directly into them','Scientists pump water in'],ans:1}
-      ],
-      dragZones:['Lentic (still)','Lotic (flowing)','Marine (saltwater)'],
-      dragItems:[
-        {text:'Lakes and ponds',zone:0},{text:'Swamps',zone:0},
-        {text:'Rivers and streams',zone:1},{text:'Creeks',zone:1},
-        {text:'Oceans and seas',zone:2},{text:'Gulfs',zone:2}
-      ],
-      fills:[
-        {before:'Lentic biomes have ',blank:'still',after:' water, like lakes and ponds.'},
-        {before:'Rivers and streams are examples of ',blank:'lotic',after:' biomes.'},
-        {before:'A gulf is a large body of ',blank:'saltwater',after:' almost surrounded by land.'},
-        {before:'An ',blank:'aquifer',after:' is underground rock or sand that stores water.'}
-      ]
-    },
-    { id:'t5', label:'Potable Water & Marshes', color:'topic-5',
-      desc:'Potable water is safe to drink. Marshes are vital wetland ecosystems that protect water quality.',
-      flashcards:[
-        {term:'Potable Water',def:'Water that is safe for humans to drink — clean, clear, free from bacteria and chemicals.',hint:'"Potable" comes from Latin "potare" = to drink.'},
-        {term:'Characteristics',def:'Potable water must be: free from bacteria & parasites, low in toxic chemicals, clear with no bad smells or colors.',hint:'Think: what would make you NOT want to drink it?'},
-        {term:'Marshes',def:'Wetland ecosystems with shallow water and lots of plants. Called "Earth\'s Kidneys".',hint:'They clean water naturally.'},
-        {term:'Flood Control',def:'Marshes act like giant sponges, absorbing extra rain to prevent flooding.',hint:'Without marshes, floods would be worse.'},
-        {term:'Biodiversity in Marshes',def:'Marshes provide nurseries for baby fish, birds and amphibians.',hint:'Many species depend on marshes to reproduce.'}
-      ],
-      quiz:[
-        {q:'What does "potable" mean?',opts:['Hot water','Salty water','Safe to drink','Moving water'],ans:2},
-        {q:'Which is a characteristic of potable water?',opts:['It must be salty','It must be free from bacteria and parasites','It must be warm','It must contain minerals'],ans:1},
-        {q:'Why are marshes called "Earth\'s Kidneys"?',opts:['They store underground water','They filter pollutants and clean water','They produce oxygen only','They prevent evaporation'],ans:1},
-        {q:'How do marshes help with floods?',opts:['They block rivers','They absorb extra rain like a sponge','They drain water to the ocean quickly','They freeze in winter'],ans:1},
-        {q:'What do marshes provide for baby fish?',opts:['Food factories','Salty environments','Nurseries to grow and reproduce','Open ocean space'],ans:2}
-      ],
-      dragZones:['Potable Water (must be...)','Marsh Functions'],
-      dragItems:[
-        {text:'Free from bacteria',zone:0},{text:'Clear with no bad smell',zone:0},
-        {text:'No toxic chemicals',zone:0},{text:'Filters pollutants',zone:1},
-        {text:'Controls flooding',zone:1},{text:'Nursery for baby fish',zone:1}
-      ],
-      fills:[
-        {before:'"Potable" means water that is safe for humans to ',blank:'drink',after:'.'},
-        {before:'Marshes are called "Earth\'s ',blank:'Kidneys',after:'" because they filter pollutants.'},
-        {before:'Marshes act like giant ',blank:'sponges',after:' to absorb extra rain and prevent floods.'},
-        {before:'Potable water must be free from harmful ',blank:'bacteria',after:' and parasites.'}
-      ]
+      highlight:'Water vapor is completely invisible. What you see as "steam" is actually tiny water droplets — not the gas itself!'
     }
   ],
-  pt: [
-    { id:'t0', label:'Ciclo da Água', color:'topic-0',
-      desc:'O movimento contínuo da água através da evaporação, condensação, precipitação e coleta.',
-      flashcards:[
-        {term:'Evaporação',def:'A energia solar aquece a água líquida, transformando-a em vapor de água (gás).',hint:'Exemplo: poças que somem em dias de sol.'},
-        {term:'Condensação',def:'O vapor de água esfria na atmosfera e forma nuvens.',hint:'Exemplo: gotinhas de água num copo gelado.'},
-        {term:'Precipitação',def:'A água cai de volta à Terra como chuva, neve, granizo ou garoa.',hint:'Todas as formas de água que caem das nuvens.'},
-        {term:'Coleta / Escoamento',def:'A água se acumula em oceanos, rios, lagos ou é absorvida pelo solo.',hint:'O ciclo recomeça a partir daqui.'},
-        {term:'Transpiração',def:'As plantas liberam vapor de água pelas folhas para a atmosfera.',hint:'As plantas também participam do ciclo!'}
-      ],
-      quiz:[
-        {q:'Qual processo transforma água líquida em vapor?',opts:['Condensação','Precipitação','Evaporação','Transpiração'],ans:2},
-        {q:'O que acontece durante a condensação?',opts:['A água cai como chuva','O vapor forma nuvens','A água é absorvida pelo solo','O sol aquece o oceano'],ans:1},
-        {q:'Qual NÃO é um tipo de precipitação?',opts:['Chuva','Neve','Evaporação','Granizo'],ans:2},
-        {q:'Para onde vai a água após a precipitação?',opts:['Para as nuvens','Para o espaço','Oceanos, rios, lagos ou subsolo','Somente para o subsolo'],ans:2},
-        {q:'Qual é a fonte de energia da evaporação?',opts:['Vento','Energia solar (o sol)','A lua','A chuva'],ans:1},
-        {q:'Qual processo representa a contribuição das plantas?',opts:['Precipitação','Escoamento','Condensação','Transpiração'],ans:3}
-      ],
-      dragZones:['Evaporação','Condensação','Precipitação','Coleta / Escoamento'],
-      dragItems:[
-        {text:'O sol aquece a água e vira vapor',zone:0},{text:'O vapor sobe e esfria formando nuvens',zone:1},
-        {text:'A água cai como chuva ou neve',zone:2},{text:'A água escoa para rios e oceanos',zone:3},
-        {text:'A água líquida vira gás',zone:0},{text:'Gotículas se juntam e formam nuvens',zone:1}
-      ],
-      fills:[
-        {before:'Durante a ',blank:'evaporação',after:', a água líquida vira vapor de água.'},
-        {before:'Quando o vapor esfria na atmosfera, ocorre a ',blank:'condensação',after:' e as nuvens se formam.'},
-        {before:'Chuva, neve e granizo são tipos de ',blank:'precipitação',after:'.'},
-        {before:'A água acumulada em rios e oceanos chama-se ',blank:'coleta',after:' ou escoamento.'}
-      ]
-    },
-    { id:'t1', label:'Evaporação', color:'topic-1',
-      desc:'A evaporação é um processo molecular em que o calor faz as moléculas de água escaparem da superfície líquida.',
-      flashcards:[
-        {term:'Evaporação',def:'O calor faz as moléculas de água se moverem mais rápido até escaparem e virarem gás.',hint:'Não é ferver — acontece na superfície, abaixo do ponto de ebulição.'},
-        {term:'Entrada de Energia',def:'O calor (energia térmica) acelera as moléculas de água para que escapem para o ar.',hint:'O sol é a principal fonte de calor.'},
-        {term:'Mudança de Estado',def:'A água muda de líquido para gás (vapor de água) durante a evaporação.',hint:'O vapor é invisível — você não consegue vê-lo.'},
-        {term:'Jornada Invisível',def:'O vapor de água é um gás invisível que sobe para a atmosfera.',hint:'Eventualmente forma nuvens pela condensação.'},
-        {term:'Fatos sobre Evaporação',def:'Acontece em todo lugar: roupas secando, suor sumindo, vapor de bebidas quentes.',hint:'Mais quente + mais vento = evaporação mais rápida.'}
-      ],
-      quiz:[
-        {q:'O que faz as moléculas de água acelerarem durante a evaporação?',opts:['Ar frio','Calor (energia térmica)','Apenas o vento','Gravidade'],ans:1},
-        {q:'O vapor de água é visível?',opts:['Sim, parece neblina','Sim, parece vapor','Não, é invisível','Apenas à noite'],ans:2},
-        {q:'Onde acontece a evaporação?',opts:['No fundo dos lagos','Na superfície do líquido','Nas profundezas do oceano','Apenas nos oceanos'],ans:1},
-        {q:'Qual é verdadeiro sobre a evaporação?',opts:['Só acontece quando a água ferve','Precisa de temperaturas muito altas','Acontece abaixo do ponto de ebulição','Só acontece no oceano'],ans:2},
-        {q:'Por que as poças somem mais rápido em dias quentes e ventosos?',opts:['O vento empurra a água para o solo','O calor e o vento aceleram a evaporação','O frio desacelera a evaporação','A chuva absorve a poça'],ans:1}
-      ],
-      dragZones:['Causa','Processo','Resultado'],
-      dragItems:[
-        {text:'Calor é adicionado à água líquida',zone:0},{text:'Moléculas aceleram e quebram ligações',zone:1},
-        {text:'Vapor de água sobe para o ar',zone:2},{text:'Sol fornece energia térmica',zone:0},
-        {text:'Líquido muda para gás',zone:2},{text:'Ligações entre moléculas se quebram',zone:1}
-      ],
-      fills:[
-        {before:'A evaporação acontece na ',blank:'superfície',after:' do líquido, não no fundo.'},
-        {before:'O vapor de água é um gás ',blank:'invisível',after:' que sobe para a atmosfera.'},
-        {before:'Quanto mais rápido as moléculas se movem, mais rápido a água ',blank:'evapora',after:'.'},
-        {before:'As poças somem porque a água ',blank:'evapora',after:' para o ar.'}
-      ]
-    },
-    { id:'t2', label:'Salinidade e Tipos de Água', color:'topic-2',
-      desc:'A água é classificada pelo seu teor de sal. A salinidade afeta culturas, solo e ecossistemas.',
-      flashcards:[
-        {term:'Água Doce',def:'Teor de sal muito baixo (menos de 1%). Encontrada em lagos e rios.',hint:'É o que bebemos!'},
-        {term:'Água Salobra',def:'Mistura de água doce e salgada. Encontrada em estuários (onde rios encontram o mar).',hint:'Entre doce e salgada.'},
-        {term:'Água Salgada (Marinha)',def:'Alto teor de sal (cerca de 3,5%). Encontrada em oceanos e mares.',hint:'A maior parte da água da Terra é salgada.'},
-        {term:'Estresse Salino',def:'A maioria das culturas não consegue crescer em água muito salgada.',hint:'Muito sal = plantas não conseguem sobreviver.'},
-        {term:'Solo Estéril',def:'Excesso de sal no solo ao longo do tempo torna a terra incapaz de produzir qualquer coisa.',hint:'Problema grave em regiões áridas.'}
-      ],
-      quiz:[
-        {q:'Qual é o teor de sal da água salgada (marinha)?',opts:['Menos de 1%','Cerca de 3,5%','Cerca de 10%','Cerca de 50%'],ans:1},
-        {q:'O que é água salobra?',opts:['Água doce pura','Mistura de água doce e salgada','Água oceânica muito salgada','Água de chuva'],ans:1},
-        {q:'Onde a água doce é encontrada?',opts:['Oceanos e mares','Estuários','Lagos e rios','O oceano profundo'],ans:2},
-        {q:'Como a alta salinidade afeta as raízes das plantas?',opts:['Ajuda as raízes a absorver mais água','Puxa a água PARA FORA das raízes','Faz as raízes crescerem mais rápido','Não tem efeito'],ans:1},
-        {q:'O que significa "solo estéril"?',opts:['Solo com muita água','Solo muito frio','Solo que não consegue produzir nada por excesso de sal','Solo muito fértil'],ans:2}
-      ],
-      dragZones:['Água Doce','Água Salobra','Água Salgada'],
-      dragItems:[
-        {text:'Lagos e rios',zone:0},{text:'Menos de 1% de sal',zone:0},
-        {text:'Onde rios encontram o mar',zone:1},{text:'Mistura de doce e salgada',zone:1},
-        {text:'Oceanos e mares',zone:2},{text:'Cerca de 3,5% de sal',zone:2}
-      ],
-      fills:[
-        {before:'Água com menos de 1% de sal é chamada de água ',blank:'doce',after:'.'},
-        {before:'A água salobra é encontrada nos ',blank:'estuários',after:', onde rios encontram o mar.'},
-        {before:'Alta salinidade puxa a água para ',blank:'fora',after:' das raízes das plantas.'},
-        {before:'Solo que não consegue produzir nada por excesso de sal é chamado de solo ',blank:'estéril',after:'.'}
-      ]
-    },
-    { id:'t3', label:'Estações Secas e Conservação', color:'topic-3',
-      desc:'As estações secas reduzem significativamente a precipitação, ameaçando o abastecimento de água.',
-      flashcards:[
-        {term:'Estação Seca',def:'Período em que a precipitação (chuva) diminui significativamente.',hint:'Oposto da estação chuvosa.'},
-        {term:'O Problema',def:'Sem chuva suficiente, os níveis de água em lagos e aquíferos caem perigosamente.',hint:'O sistema não consegue se "recarregar" rápido o suficiente.'},
-        {term:'Recarga de Aquíferos',def:'A chuva penetra no solo ao longo do tempo para reabastecer as reservas de água subterrânea.',hint:'Esse processo é muito lento — leva meses ou anos.'},
-        {term:'Conservação da Água',def:'Economizar e reduzir o uso de água para proteger os estoques.',hint:'Devemos economizar água mesmo quando chove!'},
-        {term:'Tempo de Recarga',def:'As reservas de água subterrânea levam muito tempo para se reabastecer após serem esgotadas.',hint:'Por isso a conservação é tão importante.'}
-      ],
-      quiz:[
-        {q:'O que acontece com a precipitação durante a estação seca?',opts:['Aumenta','Permanece igual','Diminui significativamente','Cai apenas como neve'],ans:2},
-        {q:'O que significa "recarregar o sistema"?',opts:['Substituir água por eletricidade','A chuva reabastecendo lagos e aquíferos','Limpar água numa fábrica','Instalar painéis solares em lagos'],ans:1},
-        {q:'Por que devemos economizar água mesmo quando chove?',opts:['A chuva é suja','As reservas subterrâneas demoram muito para se reabastecer','A chuva é temporária','Os tanques de água transbordam facilmente'],ans:1},
-        {q:'O que cai quando não há chuva suficiente?',opts:['Temperatura do ar','Níveis de água em lagos e aquíferos','Temperatura do solo','Cobertura de nuvens'],ans:1},
-        {q:'O que é conservação da água?',opts:['Usar o máximo de água possível','Beber apenas água engarrafada','Economizar e reduzir o uso de água','Filtrar água do mar'],ans:2}
-      ],
-      dragZones:['Causa do problema','Efeito','Solução'],
-      dragItems:[
-        {text:'Precipitação diminui na estação seca',zone:0},{text:'Nível de água em lagos cai',zone:1},
-        {text:'Aquíferos levam tempo para se reabastecer',zone:1},{text:'Conservar água todo dia',zone:2},
-        {text:'Reduzir o uso de água em casa',zone:2},{text:'Pouca chuva para recarregar',zone:0}
-      ],
-      fills:[
-        {before:'Durante a estação seca, a ',blank:'precipitação',after:' diminui significativamente.'},
-        {before:'Os níveis de água em lagos e ',blank:'aquíferos',after:' caem quando não há chuva suficiente.'},
-        {before:'As reservas de água subterrânea levam muito ',blank:'tempo',after:' para se reabastecer.'},
-        {before:'Precisamos economizar água mesmo quando chove porque nossa reserva subterrânea precisa se ',blank:'recarregar',after:'.'}
-      ]
-    },
-    { id:'t4', label:'Biomas Aquáticos', color:'topic-4',
-      desc:'A água existe em muitos ecossistemas: lênticos, lóticos, marinhos e zonas úmidas.',
-      flashcards:[
-        {term:'Biomas Lênticos',def:'Ambientes de água parada (não se move). Exemplos: lagos, lagoas, pântanos.',hint:'Água parada = Lêntico. Pense: "Lagoa Lenta".'},
-        {term:'Biomas Lóticos',def:'Ambientes de água em movimento. Exemplos: rios, riachos, córregos.',hint:'Água em movimento = Lótico. Pense: "Lótico = Lotado de fluxo".'},
-        {term:'Biomas Marinhos',def:'Ambientes de água salgada como oceanos, mares e golfos.',hint:'Cobrem mais de 70% da superfície da Terra.'},
-        {term:'Golfo',def:'Grande extensão de água quase cercada por terra, com uma pequena abertura para o oceano.',hint:'Mais quente e raso — ótimo para recifes de coral.'},
-        {term:'Aquífero',def:'Camada de rocha ou areia subterrânea que armazena água. A chuva penetra no solo para reabastecê-lo.',hint:'Humanos perfuram poços nos aquíferos para obter água potável.'}
-      ],
-      quiz:[
-        {q:'O que significa "lêntico"?',opts:['Água de movimento rápido','Água salgada','Água parada','Água congelada'],ans:2},
-        {q:'Qual é um exemplo de bioma lótico?',opts:['Um lago','Um pântano','Uma lagoa','Um rio'],ans:3},
-        {q:'O que é um aquífero?',opts:['Um tipo de nuvem','Rocha subterrânea que armazena água','Um lago de água salgada','Uma estação de tratamento de água'],ans:1},
-        {q:'O que torna os golfos bons habitats?',opts:['São muito profundos e frios','São quentes e rasos — bons para recifes de coral','Não têm sal','São congelados o ano todo'],ans:1},
-        {q:'Como os aquíferos se reabastecem?',opts:['Por rios que fluem para eles','A chuva penetra no solo','A neve derrete diretamente neles','Cientistas bombam água para dentro'],ans:1}
-      ],
-      dragZones:['Lêntico (parado)','Lótico (em movimento)','Marinho (salgado)'],
-      dragItems:[
-        {text:'Lagos e lagoas',zone:0},{text:'Pântanos',zone:0},
-        {text:'Rios e riachos',zone:1},{text:'Córregos',zone:1},
-        {text:'Oceanos e mares',zone:2},{text:'Golfos',zone:2}
-      ],
-      fills:[
-        {before:'Biomas lênticos têm água ',blank:'parada',after:', como lagos e lagoas.'},
-        {before:'Rios e riachos são exemplos de biomas ',blank:'lóticos',after:'.'},
-        {before:'Um golfo é uma grande extensão de água ',blank:'salgada',after:' quase cercada por terra.'},
-        {before:'Um ',blank:'aquífero',after:' é rocha ou areia subterrânea que armazena água.'}
-      ]
-    },
-    { id:'t5', label:'Água Potável e Pântanos', color:'topic-5',
-      desc:'Água potável é segura para beber. Os pântanos são ecossistemas vitais que protegem a qualidade da água.',
-      flashcards:[
-        {term:'Água Potável',def:'Água segura para consumo humano — limpa, clara, livre de bactérias e produtos químicos.',hint:'"Potável" vem do latim "potare" = beber.'},
-        {term:'Características',def:'Água potável deve ser: livre de bactérias e parasitas, com baixo teor de químicos tóxicos, clara sem odores ou cores estranhas.',hint:'Pense: o que te faria NÃO querer beber?'},
-        {term:'Pântanos',def:'Ecossistemas de zonas úmidas com água rasa e muitas plantas. Chamados de "Rins da Terra".',hint:'Limpam a água naturalmente.'},
-        {term:'Controle de Enchentes',def:'Os pântanos agem como esponjas gigantes, absorvendo chuva extra para prevenir enchentes.',hint:'Sem pântanos, as enchentes seriam piores.'},
-        {term:'Biodiversidade nos Pântanos',def:'Os pântanos são berçários para filhotes de peixes, aves e anfíbios.',hint:'Muitas espécies dependem dos pântanos para se reproduzir.'}
-      ],
-      quiz:[
-        {q:'O que significa "potável"?',opts:['Água quente','Água salgada','Segura para beber','Água em movimento'],ans:2},
-        {q:'Qual é uma característica da água potável?',opts:['Deve ser salgada','Deve ser livre de bactérias e parasitas','Deve ser quente','Deve conter minerais'],ans:1},
-        {q:'Por que os pântanos são chamados de "Rins da Terra"?',opts:['Armazenam água subterrânea','Filtram poluentes e limpam a água','Produzem apenas oxigênio','Impedem a evaporação'],ans:1},
-        {q:'Como os pântanos ajudam com as enchentes?',opts:['Bloqueiam os rios','Absorvem a chuva extra como uma esponja','Drenam água para o oceano rapidamente','Congelam no inverno'],ans:1},
-        {q:'O que os pântanos fornecem para os filhotes de peixes?',opts:['Fábricas de alimentos','Ambientes salgados','Berçários para crescer e se reproduzir','Espaço no oceano aberto'],ans:2}
-      ],
-      dragZones:['Água Potável (deve ser...)','Funções dos Pântanos'],
-      dragItems:[
-        {text:'Livre de bactérias',zone:0},{text:'Clara sem odor estranho',zone:0},
-        {text:'Sem produtos químicos tóxicos',zone:0},{text:'Filtra poluentes',zone:1},
-        {text:'Controla enchentes',zone:1},{text:'Berçário para filhotes de peixes',zone:1}
-      ],
-      fills:[
-        {before:'"Potável" significa água segura para ',blank:'beber',after:'.'},
-        {before:'Os pântanos são chamados de "',blank:'Rins',after:' da Terra" porque filtram poluentes.'},
-        {before:'Os pântanos agem como ',blank:'esponjas',after:' gigantes para absorver chuva e prevenir enchentes.'},
-        {before:'A água potável deve ser livre de ',blank:'bactérias',after:' e parasitas nocivos.'}
-      ]
-    }
+  flashcards:[
+    {term:'Evaporation',def:'Heat turns liquid water into an invisible gas called water vapor.',hint:'Example: puddles disappearing on a sunny day.'},
+    {term:'Water Vapor',def:'The invisible gas that water becomes when it evaporates.',hint:'You cannot see it — it is completely transparent!'},
+    {term:'Thermal Energy',def:'Heat energy that makes water molecules move faster until they escape into the air.',hint:'The sun is the main source of thermal energy.'},
+    {term:'Surface Evaporation',def:'Evaporation happens at the surface of the liquid, not at the bottom.',hint:'This is different from boiling, which heats all the water.'},
+    {term:'Invisible Journey',def:'Water vapor rises invisibly into the atmosphere after evaporating.',hint:'It eventually forms clouds through condensation.'}
+  ],
+  quiz:[
+    {q:'What does evaporation turn liquid water into?',opts:['Ice','An invisible gas (water vapor)','Rainwater','Steam you can see'],ans:1},
+    {q:'What provides the energy for evaporation?',opts:['Wind alone','The moon','Heat (like from the sun)','Cold air'],ans:2},
+    {q:'Where does evaporation happen on liquid water?',opts:['At the very bottom','Everywhere at once','At the surface','Only in oceans'],ans:2},
+    {q:'Which is an everyday example of evaporation?',opts:['Ice melting in a drink','Wet clothes drying on a line','Water boiling in a pot','Snow falling from clouds'],ans:1},
+    {q:'Is water vapor visible?',opts:['Yes, it looks like fog','Yes, it looks blue','No, it is completely invisible','Only at night'],ans:2}
+  ],
+  dragZones:['Cause of Evaporation','Steps of the Process','Result'],
+  dragItems:[
+    {text:'Sun heats the water surface',zone:0},{text:'Heat energy is added',zone:0},
+    {text:'Molecules speed up and break free',zone:1},{text:'Water changes from liquid to gas',zone:1},
+    {text:'Invisible vapor rises into the air',zone:2},{text:'Water leaves the liquid surface',zone:2}
+  ],
+  fills:[
+    {before:'Evaporation turns liquid water into an invisible ',blank:'gas',after:' called water vapor.'},
+    {before:'Evaporation happens at the ',blank:'surface',after:' of the liquid, not at the bottom.'},
+    {before:'The warmer and windier it is, the ',blank:'faster',after:' water evaporates.'},
+    {before:'The invisible gas that water becomes when it evaporates is called water ',blank:'vapor',after:'.'}
   ]
-};
+},
+{
+  emoji:'🌊', color:'topic-0',
+  accent:'#1a6faa', accentLight:'#e3f0fa', accentMid:'#378ADD',
+  label:'The Water Cycle',
+  order:'Step 2 of 6',
+  heroDesc:'Discover the amazing journey water takes — from ocean to cloud to rain and back again!',
+  reading:[
+    {
+      title:'Water\'s Never-Ending Journey',icon:'🔄',
+      paras:[
+        'Did you know that the water you drink today might have once been in a dinosaur\'s body millions of years ago? That\'s because <strong>water never disappears</strong> — it just keeps moving in a cycle called the <strong>Water Cycle</strong>!',
+        'A cycle is something that repeats again and again, like the seasons. The water cycle has four main stages, and they keep happening, over and over, all around the planet.'
+      ],
+      highlight:'The 4 stages: Evaporation → Condensation → Precipitation → Collection'
+    },
+    {
+      title:'The 4 Stages Explained',icon:'📋',
+      paras:['Let\'s look at each stage one by one:'],
+      list:[
+        '<strong>Evaporation:</strong> The sun heats water in oceans, lakes and rivers. The water turns into invisible vapor and rises into the sky.',
+        '<strong>Condensation:</strong> High up in the sky, the air is cold. The vapor cools down and turns back into tiny water droplets, forming clouds.',
+        '<strong>Precipitation:</strong> When clouds get heavy with water droplets, the water falls back down as rain, snow, sleet, or hail.',
+        '<strong>Collection / Runoff:</strong> Water lands on Earth and collects in rivers, lakes and oceans — or soaks into the ground. Then the cycle starts again!'
+      ],
+      funFact:'🌟 Plants also help! They release water vapor through their leaves in a process called Transpiration. So trees are part of the water cycle too!',
+      funColor:'#e0f4f1', funText:'#0a4a42'
+    },
+    {
+      title:'Why is the Water Cycle Important?',icon:'🌍',
+      paras:[
+        'The water cycle is what keeps our planet alive. It moves <strong>fresh water</strong> all around the world — from the ocean to the mountains, to the rivers, to our taps!',
+        'Without the water cycle, there would be no rain. Without rain, no plants. Without plants, no food. Without food... well, you get the idea!'
+      ],
+      highlight:'The water cycle is powered by the sun\'s energy and gravity. The sun drives evaporation; gravity pulls precipitation back to Earth.'
+    }
+  ],
+  flashcards:[
+    {term:'Water Cycle',def:'The continuous journey of water through evaporation, condensation, precipitation and collection.',hint:'It never stops — water keeps moving forever!'},
+    {term:'Evaporation',def:'Solar energy heats liquid water, turning it into water vapor (gas).',hint:'Example: puddles disappearing on a sunny day.'},
+    {term:'Condensation',def:'Water vapor cools in the atmosphere and turns back into tiny droplets, forming clouds.',hint:'Example: water droplets on a cold glass.'},
+    {term:'Precipitation',def:'Water falls back to Earth as rain, snow, sleet, or hail.',hint:'All forms of water falling from clouds count!'},
+    {term:'Transpiration',def:'Plants release water vapor through their leaves into the atmosphere.',hint:'Plants are part of the water cycle too!'}
+  ],
+  quiz:[
+    {q:'What are the 4 stages of the water cycle in the correct order?',opts:['Rain → Clouds → Ocean → Sun','Evaporation → Condensation → Precipitation → Collection','Condensation → Evaporation → Rain → Rivers','Collection → Rain → Clouds → Sun'],ans:1},
+    {q:'What happens during condensation?',opts:['Water falls as rain','Water vapor cools and forms clouds','Water soaks into the ground','The sun heats the ocean'],ans:1},
+    {q:'Which of these is NOT a type of precipitation?',opts:['Rain','Snow','Evaporation','Hail'],ans:2},
+    {q:'What energy source powers the water cycle?',opts:['Wind energy','Nuclear energy','The sun (solar energy) and gravity','The moon\'s gravity'],ans:2},
+    {q:'What is transpiration?',opts:['Water falling as rain','Clouds forming in the sky','Plants releasing water vapor through their leaves','Water soaking into the ground'],ans:2}
+  ],
+  dragZones:['Evaporation','Condensation','Precipitation','Collection'],
+  dragItems:[
+    {text:'Sun heats water into vapor',zone:0},{text:'Liquid water becomes gas',zone:0},
+    {text:'Vapor cools and forms clouds',zone:1},{text:'Tiny droplets gather in the sky',zone:1},
+    {text:'Water falls as rain or snow',zone:2},{text:'Hail or sleet hits the ground',zone:2},
+    {text:'Water flows into rivers and oceans',zone:3}
+  ],
+  fills:[
+    {before:'The sun\'s heat turns water into vapor during ',blank:'evaporation',after:'.'},
+    {before:'Water vapor cools and forms clouds in a process called ',blank:'condensation',after:'.'},
+    {before:'Rain, snow and hail are all types of ',blank:'precipitation',after:'.'},
+    {before:'Plants release water vapor through their leaves in a process called ',blank:'transpiration',after:'.'}
+  ]
+},
+{
+  emoji:'🧂', color:'topic-2',
+  accent:'#3a7d2e', accentLight:'#eaf5e3', accentMid:'#5aad4a',
+  label:'Salinity & Water Types',
+  order:'Step 3 of 6',
+  heroDesc:'Not all water is the same! Learn about freshwater, saltwater, and why salt can be a problem for plants.',
+  reading:[
+    {
+      title:'Three Types of Water',icon:'💧',
+      paras:[
+        'Water covers about 71% of our planet — but not all water is the same! The big difference is <strong>how much salt</strong> is dissolved in it.',
+        'Scientists measure this with something called <strong>salinity</strong> (how salty the water is). Based on salinity, we have three main types:'
+      ],
+      list:[
+        '<strong>Freshwater:</strong> Very little salt — less than 1%. This is the water in lakes, rivers, and what comes out of your tap!',
+        '<strong>Brackish Water:</strong> A mix of fresh and salt water — found in estuaries, where rivers flow into the sea.',
+        '<strong>Saltwater (Marine):</strong> Very salty — about 3.5% salt. This is the water in oceans and seas.'
+      ],
+      highlight:'97% of Earth\'s water is saltwater. Only 3% is freshwater — and most of that is frozen in glaciers!'
+    },
+    {
+      title:'How Does Evaporation Change Salinity?',icon:'☀️',
+      paras:[
+        'Here\'s something interesting: when water evaporates, the <strong>salt stays behind</strong>! Only the pure water turns into vapor.',
+        'This means that in places where lots of water evaporates (like hot deserts near the sea), the water left behind gets saltier and saltier over time.'
+      ],
+      funFact:'🌟 This is how the oceans got salty! Rainwater washes minerals from rocks into rivers, rivers carry them to the sea, water evaporates — but the salt stays.',
+      funColor:'#eaf5e3', funText:'#1a4d10'
+    },
+    {
+      title:'Salt and Agriculture — Why It Matters',icon:'🌾',
+      paras:[
+        'Salt might taste good on your food, but too much salt in the soil is a <strong>big problem for plants</strong>!',
+        'When soil has too much salt, something strange happens: instead of water flowing INTO the plant roots, the salt actually pulls water OUT of them. The plant gets dehydrated and dies.',
+        'Over time, too much salt makes farmland completely <strong>sterile</strong> — meaning nothing can grow there at all. This is a serious problem in many dry regions of the world.'
+      ],
+      highlight:'Salt stress: high salinity pulls water OUT of plant roots. Sterile soil: land that cannot grow anything due to excess salt.'
+    }
+  ],
+  flashcards:[
+    {term:'Freshwater',def:'Water with very low salt content (less than 1%). Found in lakes, rivers and rain.',hint:'The water we drink is freshwater!'},
+    {term:'Brackish Water',def:'A mix of fresh and salt water, found in estuaries where rivers meet the sea.',hint:'In between fresh and salty.'},
+    {term:'Saltwater (Marine)',def:'High salt content (about 3.5%). Found in oceans and seas.',hint:'Most of Earth\'s water is saltwater.'},
+    {term:'Salinity',def:'A measure of how much salt is dissolved in water.',hint:'Higher salinity = saltier water.'},
+    {term:'Sterile Soil',def:'Farmland that cannot grow anything because too much salt has built up in it.',hint:'A major problem in hot, dry farming regions.'}
+  ],
+  quiz:[
+    {q:'What percentage of salt does marine (saltwater) contain?',opts:['Less than 1%','About 3.5%','About 10%','About 25%'],ans:1},
+    {q:'Where is brackish water found?',opts:['Deep in the ocean','In mountain glaciers','In estuaries where rivers meet the sea','In rainwater'],ans:2},
+    {q:'What happens when salty water reaches plant roots?',opts:['It helps them grow faster','It has no effect','It pulls water OUT of the roots','It makes them bigger'],ans:2},
+    {q:'What does "sterile soil" mean in farming?',opts:['Very fertile land','Soil that is too wet','Soil that cannot grow anything due to excess salt','Frozen farmland'],ans:2},
+    {q:'When water evaporates from the ocean, what happens to the salt?',opts:['It evaporates too','It disappears into the air','It stays behind in the water','It turns into gas'],ans:2}
+  ],
+  dragZones:['Freshwater','Brackish Water','Saltwater'],
+  dragItems:[
+    {text:'Lakes and rivers',zone:0},{text:'Less than 1% salt',zone:0},
+    {text:'Where rivers meet the sea',zone:1},{text:'Mix of fresh and salt',zone:1},
+    {text:'Oceans and seas',zone:2},{text:'About 3.5% salt',zone:2}
+  ],
+  fills:[
+    {before:'Water with less than 1% salt is called ',blank:'freshwater',after:'.'},
+    {before:'Brackish water is found in estuaries where rivers meet the ',blank:'sea',after:'.'},
+    {before:'High salinity pulls water ',blank:'out',after:' of plant roots instead of letting it in.'},
+    {before:'Farmland that cannot grow anything due to excess salt is called ',blank:'sterile',after:' soil.'}
+  ]
+},
+{
+  emoji:'🌵', color:'topic-3',
+  accent:'#b56a00', accentLight:'#fff3e0', accentMid:'#e08a1a',
+  label:'Dry Seasons & Conservation',
+  order:'Step 4 of 6',
+  heroDesc:'What happens when it stops raining? Learn about dry seasons and why saving water matters every single day.',
+  reading:[
+    {
+      title:'What is a Dry Season?',icon:'☀️',
+      paras:[
+        'In many parts of the world, the year is divided into a <strong>wet season</strong> (lots of rain) and a <strong>dry season</strong> (little or no rain). Brazil, for example, has both!',
+        'During a dry season, precipitation drops significantly. This means less water is available for people, animals and plants — and it can cause serious problems.'
+      ],
+      highlight:'Dry season = a long period with very little or no precipitation (rain or snow).',
+      list:[
+        'Rivers and lakes shrink or even dry up completely.',
+        'Underground water reserves (aquifers) stop being refilled.',
+        'Animals and plants struggle to find enough water.',
+        'People may face water shortages.'
+      ]
+    },
+    {
+      title:'The Underground Problem: Aquifers',icon:'🕳️',
+      paras:[
+        'Much of our drinking water doesn\'t come from rivers — it comes from <strong>aquifers</strong>: giant underground stores of water trapped in rock and sand.',
+        'Normally, rain soaks through the soil and slowly refills these underground tanks. But this process is <strong>very slow</strong> — it can take months or even years.',
+        'When there\'s a dry season, aquifers stop being refilled. If we keep using water at the same rate, the underground supply can run dangerously low.'
+      ],
+      funFact:'🌟 Think of an aquifer like a giant underground sponge. Rain fills it up slowly — but we can drain it much faster than nature can refill it!',
+      funColor:'#fff3e0', funText:'#7a4500'
+    },
+    {
+      title:'Why We Must Conserve Water Every Day',icon:'💚',
+      paras:[
+        'Here\'s the key idea: <strong>we must save water even when it\'s raining</strong>! Why? Because underground supplies take so long to refill.',
+        'If everyone wastes water during the wet season, there won\'t be enough stored for the dry season.'
+      ],
+      list:[
+        'Take shorter showers.',
+        'Turn off the tap while brushing your teeth.',
+        'Fix dripping taps — a small drip wastes thousands of litres per year!',
+        'Water plants in the evening, so less water evaporates.'
+      ],
+      highlight:'Conservation = protecting water supplies by using less and wasting less. Every drop counts — especially underground!'
+    }
+  ],
+  flashcards:[
+    {term:'Dry Season',def:'A period of the year with very little or no precipitation.',hint:'Opposite of the rainy/wet season.'},
+    {term:'Aquifer',def:'Underground rock or sand that stores water. Rainwater slowly soaks down to refill it.',hint:'Humans drill wells into aquifers for drinking water.'},
+    {term:'Recharge',def:'The process of rainwater soaking into the ground to refill aquifers.',hint:'Very slow — takes months or years!'},
+    {term:'Water Conservation',def:'Saving and reducing water use to protect supplies for the future.',hint:'Save water even when it is raining!'},
+    {term:'Water Shortage',def:'When there is not enough water available for people, animals and plants.',hint:'Can happen when dry seasons last too long.'}
+  ],
+  quiz:[
+    {q:'What happens to precipitation during a dry season?',opts:['It increases a lot','It stays the same','It decreases significantly','It only falls as snow'],ans:2},
+    {q:'What is an aquifer?',opts:['A type of cloud','Underground rock or sand that stores water','A water treatment plant','A frozen lake'],ans:1},
+    {q:'Why must we save water even when it\'s raining?',opts:['Rain is dirty','Underground supplies take a long time to refill','Rain is too cold to drink','Water tanks overflow easily'],ans:1},
+    {q:'How long can it take for aquifers to refill?',opts:['A few hours','A few days','Months or even years','Only a week'],ans:2},
+    {q:'Which is a good water conservation habit?',opts:['Leaving the tap running while brushing teeth','Taking very long showers','Turning off the tap when not using it','Watering plants at midday'],ans:2}
+  ],
+  dragZones:['Cause','Effect','Solution'],
+  dragItems:[
+    {text:'Dry season — little rain',zone:0},{text:'Underground water stops refilling',zone:0},
+    {text:'Water levels in lakes drop',zone:1},{text:'Aquifer supply runs low',zone:1},
+    {text:'Save water every day',zone:2},{text:'Fix dripping taps at home',zone:2}
+  ],
+  fills:[
+    {before:'A dry season is a period with very little ',blank:'precipitation',after:'.'},
+    {before:'Underground water is stored in layers of rock called ',blank:'aquifers',after:'.'},
+    {before:'Rainwater soaks into the ground slowly to ',blank:'recharge',after:' aquifers.'},
+    {before:'We should save water even when it rains because underground supplies take a long time to ',blank:'refill',after:'.'}
+  ]
+},
+{
+  emoji:'🌿', color:'topic-4',
+  accent:'#5c3d9e', accentLight:'#ede8fb', accentMid:'#7c5abf',
+  label:'Water Biomes',
+  order:'Step 5 of 6',
+  heroDesc:'Water is home to billions of living things! Explore the different water ecosystems on our planet.',
+  reading:[
+    {
+      title:'What is a Biome?',icon:'🌍',
+      paras:[
+        'A <strong>biome</strong> is a large area with a specific environment — climate, plants, animals and other living things. You\'ve probably heard of land biomes like forests or deserts.',
+        'But water has biomes too! Scientists divide them based on two things: <strong>does the water move?</strong> and <strong>is it salty or fresh?</strong>'
+      ]
+    },
+    {
+      title:'Lentic vs. Lotic: Still or Moving?',icon:'🏞️',
+      paras:['Freshwater biomes are divided into two groups:'],
+      list:[
+        '<strong>Lentic Biomes</strong> (from Latin "lentus" = slow/still): Water that does NOT move. Examples: lakes, ponds, swamps. Memory trick: Lentic = Lazy!',
+        '<strong>Lotic Biomes</strong> (from Latin "lotus" = flowing): Water that is always moving. Examples: rivers, streams, creeks. Memory trick: Lotic = Lots of flow!'
+      ],
+      funFact:'🌟 Lakes can be huge! Lake Superior in North America is so big it looks like a sea — but it\'s freshwater!',
+      funColor:'#ede8fb', funText:'#3a1a7a'
+    },
+    {
+      title:'Marine Biomes: The Salty World',icon:'🌊',
+      paras:[
+        'Marine biomes are saltwater environments — oceans, seas, and <strong>gulfs</strong>.',
+        'A <strong>gulf</strong> is a large body of saltwater almost completely surrounded by land, with a small opening to the ocean. Gulfs are usually warmer and shallower than the open ocean — making them perfect for coral reefs and sea turtles!',
+        'Marine biomes cover over 70% of Earth\'s surface and are home to more species than any other biome.'
+      ],
+      highlight:'Lentic = still freshwater (lakes, ponds). Lotic = flowing freshwater (rivers, streams). Marine = saltwater (oceans, seas, gulfs).'
+    }
+  ],
+  flashcards:[
+    {term:'Lentic Biome',def:'A freshwater biome with still (non-moving) water. Examples: lakes, ponds, swamps.',hint:'Lentic = Lazy. Still water!'},
+    {term:'Lotic Biome',def:'A freshwater biome with flowing (moving) water. Examples: rivers, streams, creeks.',hint:'Lotic = Lots of flow. Moving water!'},
+    {term:'Marine Biome',def:'A saltwater environment such as oceans, seas and gulfs.',hint:'Covers over 70% of Earth\'s surface.'},
+    {term:'Gulf',def:'A large body of saltwater almost surrounded by land, with a small opening to the ocean.',hint:'Warmer and shallower than open ocean — great for coral reefs.'},
+    {term:'Biodiversity',def:'The variety of different living things (plants, animals, microbes) in an ecosystem.',hint:'Marine biomes have the highest biodiversity on Earth.'}
+  ],
+  quiz:[
+    {q:'What does "lentic" mean?',opts:['Fast-moving water','Salty water','Still (non-moving) water','Frozen water'],ans:2},
+    {q:'Which is an example of a lotic biome?',opts:['A lake','A swamp','A pond','A river'],ans:3},
+    {q:'What makes a gulf different from an open ocean?',opts:['It has no salt','It is mostly surrounded by land','It has no marine life','It is always frozen'],ans:1},
+    {q:'Which type of biome covers more than 70% of Earth\'s surface?',opts:['Lentic biomes','Lotic biomes','Marine biomes','Desert biomes'],ans:2},
+    {q:'Lakes and ponds belong to which type of biome?',opts:['Marine','Lotic','Lentic','Estuary'],ans:2}
+  ],
+  dragZones:['Lentic (still water)','Lotic (flowing water)','Marine (saltwater)'],
+  dragItems:[
+    {text:'Lakes and ponds',zone:0},{text:'Swamps',zone:0},
+    {text:'Rivers and streams',zone:1},{text:'Creeks',zone:1},
+    {text:'Oceans and seas',zone:2},{text:'Gulfs',zone:2}
+  ],
+  fills:[
+    {before:'Lentic biomes have ',blank:'still',after:' water, like lakes and ponds.'},
+    {before:'Rivers and streams are examples of ',blank:'lotic',after:' biomes.'},
+    {before:'A gulf is a large body of saltwater almost surrounded by ',blank:'land',after:'.'},
+    {before:'Marine biomes cover over ',blank:'70',after:'% of Earth\'s surface.'}
+  ]
+},
+{
+  emoji:'🚰', color:'topic-5',
+  accent:'#c0392b', accentLight:'#fdecea', accentMid:'#e05545',
+  label:'Potable Water & Marshes',
+  order:'Step 6 of 6',
+  heroDesc:'What makes water safe to drink? And how do marshes keep our water and planet healthy?',
+  reading:[
+    {
+      title:'What is Potable Water?',icon:'💧',
+      paras:[
+        'Not all water is safe to drink! "Potable" (say it: POH-tah-bul) is a fancy word that means <strong>safe for humans to drink</strong>.',
+        'Potable water must meet three important conditions:'
+      ],
+      list:[
+        '<strong>Free from bacteria and parasites:</strong> Tiny living things that can make you very sick.',
+        '<strong>Low in toxic chemicals:</strong> Some chemicals from industry or farming can contaminate water.',
+        '<strong>Clear, with no strange smells or colors:</strong> Water should be transparent and odourless.'
+      ],
+      highlight:'Most water in nature is NOT safe to drink without treatment. Water treatment plants clean and purify water before it reaches your tap.'
+    },
+    {
+      title:'Marshes — Earth\'s Natural Kidneys',icon:'🌿',
+      paras:[
+        'A <strong>marsh</strong> is a type of wetland — a shallow area covered with water and lots of plants like reeds and grasses. Marshes might look like muddy, messy places, but they are <strong>incredibly important</strong>!',
+        'Scientists call marshes "Earth\'s Kidneys" because — just like your kidneys clean your blood — marshes <strong>filter and clean water</strong> as it passes through them.'
+      ],
+      list:[
+        '<strong>Filtering pollutants:</strong> Plants and soil in marshes trap dirt, chemicals, and harmful substances.',
+        '<strong>Flood control:</strong> Marshes absorb huge amounts of rainwater like a sponge, preventing floods in nearby towns.',
+        '<strong>Biodiversity:</strong> Marshes are nurseries for baby fish, frogs, birds, and many other animals.'
+      ],
+      funFact:'🌟 A single marsh can filter millions of litres of water every day — for free! They are nature\'s own water treatment plants.',
+      funColor:'#fdecea', funText:'#7a1a10'
+    },
+    {
+      title:'Why We Must Protect Marshes',icon:'🛡️',
+      paras:[
+        'Sadly, many marshes around the world have been destroyed to build roads, houses, and farms. When marshes disappear, floods get worse, water quality drops, and many animals lose their homes.',
+        'Protecting marshes is one of the <strong>most important things</strong> we can do to keep our water clean and our communities safe from floods.'
+      ],
+      highlight:'Marshes filter water, prevent floods, and provide homes for wildlife — all at the same time, all for free!'
+    }
+  ],
+  flashcards:[
+    {term:'Potable Water',def:'Water that is safe for humans to drink — clean, clear, and free from bacteria and chemicals.',hint:'"Potable" comes from Latin "potare" = to drink.'},
+    {term:'Marsh',def:'A shallow wetland covered with water and plants. Called "Earth\'s Kidneys" because it filters water.',hint:'Marshes look muddy but are incredibly important!'},
+    {term:'"Earth\'s Kidneys"',def:'A nickname for marshes because they filter pollutants from water, just like kidneys filter blood.',hint:'Marshes clean water naturally and for free.'},
+    {term:'Flood Control',def:'Marshes absorb extra rainwater like a sponge, preventing flooding in nearby areas.',hint:'Without marshes, floods would be much worse.'},
+    {term:'Biodiversity',def:'Marshes are nurseries for baby fish, birds and amphibians — home to many species.',hint:'Many animals depend on marshes to reproduce.'}
+  ],
+  quiz:[
+    {q:'What does "potable" mean?',opts:['Hot water','Salty water','Safe to drink','Flowing water'],ans:2},
+    {q:'Which is a characteristic of potable water?',opts:['It must be salty','It must be free from bacteria and parasites','It must be warm','It must smell like minerals'],ans:1},
+    {q:'Why are marshes called "Earth\'s Kidneys"?',opts:['They store underground water','They filter pollutants and clean water','They produce oxygen only','They prevent evaporation'],ans:1},
+    {q:'How do marshes protect communities from floods?',opts:['They block rivers with plants','They absorb extra rainwater like a sponge','They drain water to the ocean fast','They freeze in winter to stop water flow'],ans:1},
+    {q:'What do marshes provide for baby fish and amphibians?',opts:['Open ocean space','Very salty environments','Nurseries to grow and reproduce safely','Nothing — marshes are too muddy'],ans:2}
+  ],
+  dragZones:['Potable Water (must be...)','Marsh Functions'],
+  dragItems:[
+    {text:'Free from bacteria',zone:0},{text:'Clear with no strange smell',zone:0},
+    {text:'No toxic chemicals',zone:0},{text:'Filters pollutants',zone:1},
+    {text:'Controls flooding',zone:1},{text:'Nursery for baby fish',zone:1}
+  ],
+  fills:[
+    {before:'"Potable" means water that is safe for humans to ',blank:'drink',after:'.'},
+    {before:'Marshes are called "Earth\'s ',blank:'Kidneys',after:'" because they filter pollutants from water.'},
+    {before:'Marshes act like giant ',blank:'sponges',after:' absorbing extra rain to prevent floods.'},
+    {before:'Potable water must be free from harmful ',blank:'bacteria',after:' and parasites.'}
+  ]
+}
+],
+pt:[
+{
+  emoji:'☀️', color:'topic-1',
+  accent:'#0e7a6e', accentLight:'#e0f4f1', accentMid:'#1aab9b',
+  label:'Evaporação',
+  order:'Etapa 1 de 6',
+  heroDesc:'Aprenda como a água muda de líquido para gás invisível — o ponto de partida de tudo!',
+  reading:[
+    {
+      title:'O que é Evaporação?',icon:'🔬',
+      paras:[
+        'Você já deixou um copo com água do lado de fora num dia quente e voltou para encontrar menos água lá? Para onde foi? Ela não sumiu — ela <strong>evaporou!</strong>',
+        'Evaporação é o que acontece quando <strong>o calor transforma a água líquida em um gás invisível</strong> chamado vapor de água. O sol age como um aquecedor gigante que aquece a água nos oceanos, lagos, rios — e até nas poças da rua!'
+      ],
+      highlight:'Ideia principal: Evaporação = água líquida → gás invisível (vapor de água), impulsionada pelo calor.',
+      list:[
+        'O sol aquece a superfície da água.',
+        'As moléculas de água (pedacinhos minúsculos de água) começam a se mover cada vez mais rápido.',
+        'As moléculas mais rápidas escapam da superfície e viram gás.',
+        'Esse gás invisível sobe para o ar.'
+      ]
+    },
+    {
+      title:'Evaporação no Dia a Dia',icon:'🌞',
+      paras:['A evaporação está acontecendo ao seu redor o tempo todo! Aqui estão alguns exemplos que você provavelmente já viu:'],
+      list:[
+        'Roupas molhadas secando no varal — a água evapora para o ar.',
+        'O suor sumindo da sua pele — seu corpo esfria por meio da evaporação!',
+        'Vapor subindo de uma xícara de chá ou sopa quente.',
+        'Uma poça depois da chuva sumindo gradualmente num dia de sol.'
+      ],
+      funFact:'🌟 Curiosidade: Quanto mais quente e ventoso, mais rápido a água evapora. Por isso as roupas secam mais rápido em dias quentes e ventosos!',
+      funColor:'#fff3e0', funText:'#7a4500'
+    },
+    {
+      title:'Importante: Evaporação NÃO é Fervura!',icon:'⚗️',
+      paras:[
+        'A evaporação acontece <strong>na superfície</strong> da água, em temperaturas normais — você não precisa da água fervendo!',
+        'A fervura acontece quando toda a água fica extremamente quente (100°C). A evaporação acontece devagar, na superfície, mesmo num dia ameno.'
+      ],
+      highlight:'O vapor de água é completamente invisível. O que você vê como "vapor" na verdade são pequenas gotículas de água — não o gás em si!'
+    }
+  ],
+  flashcards:[
+    {term:'Evaporação',def:'O calor transforma a água líquida em um gás invisível chamado vapor de água.',hint:'Exemplo: poças sumindo num dia de sol.'},
+    {term:'Vapor de Água',def:'O gás invisível em que a água se torna quando evapora.',hint:'Você não consegue vê-lo — é completamente transparente!'},
+    {term:'Energia Térmica',def:'Energia de calor que faz as moléculas de água se moverem mais rápido até escaparem para o ar.',hint:'O sol é a principal fonte de energia térmica.'},
+    {term:'Evaporação na Superfície',def:'A evaporação acontece na superfície do líquido, não no fundo.',hint:'Diferente da fervura, que aquece toda a água.'},
+    {term:'Jornada Invisível',def:'O vapor de água sobe invisivelmente para a atmosfera após evaporar.',hint:'Eventualmente forma nuvens através da condensação.'}
+  ],
+  quiz:[
+    {q:'Em que a evaporação transforma a água líquida?',opts:['Gelo','Um gás invisível (vapor de água)','Água de chuva','Vapor que você consegue ver'],ans:1},
+    {q:'O que fornece energia para a evaporação?',opts:['Apenas o vento','A lua','Calor (como o do sol)','Ar frio'],ans:2},
+    {q:'Onde acontece a evaporação na água líquida?',opts:['No fundo','Em todo lugar ao mesmo tempo','Na superfície','Apenas nos oceanos'],ans:2},
+    {q:'Qual é um exemplo cotidiano de evaporação?',opts:['Gelo derretendo numa bebida','Roupas molhadas secando no varal','Água fervendo numa panela','Neve caindo das nuvens'],ans:1},
+    {q:'O vapor de água é visível?',opts:['Sim, parece neblina','Sim, parece azul','Não, é completamente invisível','Apenas à noite'],ans:2}
+  ],
+  dragZones:['Causa da Evaporação','Etapas do Processo','Resultado'],
+  dragItems:[
+    {text:'Sol aquece a superfície da água',zone:0},{text:'Energia de calor é adicionada',zone:0},
+    {text:'Moléculas aceleram e escapam',zone:1},{text:'Água muda de líquido para gás',zone:1},
+    {text:'Vapor invisível sobe para o ar',zone:2},{text:'Água deixa a superfície líquida',zone:2}
+  ],
+  fills:[
+    {before:'A evaporação transforma a água líquida em um ',blank:'gás',after:' invisível chamado vapor de água.'},
+    {before:'A evaporação acontece na ',blank:'superfície',after:' do líquido, não no fundo.'},
+    {before:'Quanto mais quente e ventoso, mais ',blank:'rápido',after:' a água evapora.'},
+    {before:'O gás invisível que a água se torna ao evaporar chama-se vapor de ',blank:'água',after:'.'}
+  ]
+},
+{
+  emoji:'🌊', color:'topic-0',
+  accent:'#1a6faa', accentLight:'#e3f0fa', accentMid:'#378ADD',
+  label:'O Ciclo da Água',
+  order:'Etapa 2 de 6',
+  heroDesc:'Descubra a incrível jornada da água — do oceano à nuvem, à chuva e de volta ao início!',
+  reading:[
+    {
+      title:'A Jornada Sem Fim da Água',icon:'🔄',
+      paras:[
+        'Você sabia que a água que você bebe hoje pode ter estado no corpo de um dinossauro há milhões de anos? Isso porque <strong>a água nunca desaparece</strong> — ela continua se movendo em um ciclo chamado <strong>Ciclo da Água</strong>!',
+        'Um ciclo é algo que se repete de novo e de novo, como as estações do ano. O ciclo da água tem quatro etapas principais, que acontecem continuamente em todo o planeta.'
+      ],
+      highlight:'As 4 etapas: Evaporação → Condensação → Precipitação → Coleta'
+    },
+    {
+      title:'As 4 Etapas Explicadas',icon:'📋',
+      paras:['Vamos ver cada etapa:'],
+      list:[
+        '<strong>Evaporação:</strong> O sol aquece a água dos oceanos, lagos e rios. A água vira vapor invisível e sobe para o céu.',
+        '<strong>Condensação:</strong> No alto do céu, o ar é frio. O vapor esfria e vira gotinhas de água, formando nuvens.',
+        '<strong>Precipitação:</strong> Quando as nuvens ficam pesadas de gotinhas, a água cai de volta como chuva, neve, granizo ou garoa.',
+        '<strong>Coleta / Escoamento:</strong> A água cai na Terra e se acumula em rios, lagos e oceanos — ou é absorvida pelo solo. E o ciclo recomeça!'
+      ],
+      funFact:'🌟 As plantas também ajudam! Elas liberam vapor de água pelas folhas num processo chamado Transpiração. Então as árvores também fazem parte do ciclo da água!',
+      funColor:'#e0f4f1', funText:'#0a4a42'
+    },
+    {
+      title:'Por que o Ciclo da Água é Importante?',icon:'🌍',
+      paras:[
+        'O ciclo da água é o que mantém nosso planeta vivo. Ele move <strong>água doce</strong> por todo o mundo — do oceano para as montanhas, para os rios, até a nossa torneira!',
+        'Sem o ciclo da água, não haveria chuva. Sem chuva, não haveria plantas. Sem plantas, não haveria comida...'
+      ],
+      highlight:'O ciclo da água é movido pela energia do sol e pela gravidade. O sol impulsiona a evaporação; a gravidade puxa a precipitação de volta à Terra.'
+    }
+  ],
+  flashcards:[
+    {term:'Ciclo da Água',def:'A jornada contínua da água através da evaporação, condensação, precipitação e coleta.',hint:'Nunca para — a água continua se movendo para sempre!'},
+    {term:'Evaporação',def:'A energia solar aquece a água líquida, transformando-a em vapor de água (gás).',hint:'Exemplo: poças sumindo num dia de sol.'},
+    {term:'Condensação',def:'O vapor de água esfria na atmosfera e volta a se transformar em gotinhas, formando nuvens.',hint:'Exemplo: gotinhas de água num copo gelado.'},
+    {term:'Precipitação',def:'A água cai de volta à Terra como chuva, neve, granizo ou garoa.',hint:'Todas as formas de água que caem das nuvens!'},
+    {term:'Transpiração',def:'As plantas liberam vapor de água pelas folhas para a atmosfera.',hint:'As plantas também fazem parte do ciclo!'}
+  ],
+  quiz:[
+    {q:'Qual é a ordem correta das 4 etapas do ciclo da água?',opts:['Chuva → Nuvens → Oceano → Sol','Evaporação → Condensação → Precipitação → Coleta','Condensação → Evaporação → Chuva → Rios','Coleta → Chuva → Nuvens → Sol'],ans:1},
+    {q:'O que acontece durante a condensação?',opts:['A água cai como chuva','O vapor de água esfria e forma nuvens','A água é absorvida pelo solo','O sol aquece o oceano'],ans:1},
+    {q:'Qual destes NÃO é um tipo de precipitação?',opts:['Chuva','Neve','Evaporação','Granizo'],ans:2},
+    {q:'O que alimenta o ciclo da água?',opts:['Energia eólica','Energia nuclear','O sol (energia solar) e a gravidade','A gravidade da lua'],ans:2},
+    {q:'O que é transpiração?',opts:['A água caindo como chuva','Nuvens se formando no céu','Plantas liberando vapor de água pelas folhas','Água sendo absorvida pelo solo'],ans:2}
+  ],
+  dragZones:['Evaporação','Condensação','Precipitação','Coleta'],
+  dragItems:[
+    {text:'Sol aquece a água em vapor',zone:0},{text:'Água líquida vira gás',zone:0},
+    {text:'Vapor esfria e forma nuvens',zone:1},{text:'Gotinhas se juntam no céu',zone:1},
+    {text:'Água cai como chuva ou neve',zone:2},{text:'Granizo atinge o solo',zone:2},
+    {text:'Água flui para rios e oceanos',zone:3}
+  ],
+  fills:[
+    {before:'O calor do sol transforma a água em vapor durante a ',blank:'evaporação',after:'.'},
+    {before:'O vapor de água esfria e forma nuvens num processo chamado ',blank:'condensação',after:'.'},
+    {before:'Chuva, neve e granizo são tipos de ',blank:'precipitação',after:'.'},
+    {before:'As plantas liberam vapor de água pelas folhas num processo chamado ',blank:'transpiração',after:'.'}
+  ]
+},
+{
+  emoji:'🧂', color:'topic-2',
+  accent:'#3a7d2e', accentLight:'#eaf5e3', accentMid:'#5aad4a',
+  label:'Salinidade e Tipos de Água',
+  order:'Etapa 3 de 6',
+  heroDesc:'Nem toda água é igual! Aprenda sobre água doce, salgada e por que o sal pode ser um problema para as plantas.',
+  reading:[
+    {
+      title:'Três Tipos de Água',icon:'💧',
+      paras:[
+        'A água cobre cerca de 71% do nosso planeta — mas nem toda água é igual! A grande diferença é <strong>quanto sal</strong> está dissolvido nela.',
+        'Os cientistas medem isso com algo chamado <strong>salinidade</strong> (o quão salgada a água é). Com base na salinidade, temos três tipos principais:'
+      ],
+      list:[
+        '<strong>Água Doce:</strong> Pouco sal — menos de 1%. É a água dos lagos, rios e da sua torneira!',
+        '<strong>Água Salobra:</strong> Mistura de água doce e salgada — encontrada em estuários, onde os rios chegam ao mar.',
+        '<strong>Água Salgada (Marinha):</strong> Muito salgada — cerca de 3,5% de sal. É a água dos oceanos e mares.'
+      ],
+      highlight:'97% da água da Terra é salgada. Apenas 3% é água doce — e a maior parte disso está congelada nas geleiras!'
+    },
+    {
+      title:'Como a Evaporação Muda a Salinidade?',icon:'☀️',
+      paras:[
+        'Aqui está algo interessante: quando a água evapora, o <strong>sal fica para trás</strong>! Apenas a água pura vira vapor.',
+        'Isso significa que em lugares onde muita água evapora (como desertos quentes perto do mar), a água que sobra vai ficando cada vez mais salgada ao longo do tempo.'
+      ],
+      funFact:'🌟 É assim que os oceanos ficaram salgados! A água da chuva dissolve minerais das rochas, os rios os carregam para o mar, a água evapora — mas o sal fica.',
+      funColor:'#eaf5e3', funText:'#1a4d10'
+    },
+    {
+      title:'Sal e Agricultura — Por que Importa',icon:'🌾',
+      paras:[
+        'O sal pode ser gostoso na comida, mas excesso de sal no solo é um <strong>grande problema para as plantas</strong>!',
+        'Quando o solo tem muito sal, algo estranho acontece: em vez de a água entrar nas raízes da planta, o sal puxa a água para FORA delas. A planta fica desidratada e morre.',
+        'Com o tempo, excesso de sal torna a terra completamente <strong>estéril</strong> — ou seja, nada mais consegue crescer lá.'
+      ],
+      highlight:'Estresse salino: alta salinidade puxa a água PARA FORA das raízes das plantas. Solo estéril: terra que não consegue produzir nada por excesso de sal.'
+    }
+  ],
+  flashcards:[
+    {term:'Água Doce',def:'Água com baixo teor de sal (menos de 1%). Encontrada em lagos, rios e chuva.',hint:'A água que bebemos é água doce!'},
+    {term:'Água Salobra',def:'Mistura de água doce e salgada, encontrada em estuários onde rios encontram o mar.',hint:'Entre doce e salgada.'},
+    {term:'Água Salgada (Marinha)',def:'Alto teor de sal (cerca de 3,5%). Encontrada em oceanos e mares.',hint:'A maior parte da água da Terra é salgada.'},
+    {term:'Salinidade',def:'Medida de quanto sal está dissolvido na água.',hint:'Maior salinidade = água mais salgada.'},
+    {term:'Solo Estéril',def:'Terra agrícola que não consegue produzir nada porque acumulou muito sal.',hint:'Problema grave em regiões quentes e secas.'}
+  ],
+  quiz:[
+    {q:'Qual é a porcentagem de sal da água salgada (marinha)?',opts:['Menos de 1%','Cerca de 3,5%','Cerca de 10%','Cerca de 25%'],ans:1},
+    {q:'Onde a água salobra é encontrada?',opts:['No fundo do oceano','Em geleiras','Em estuários onde rios encontram o mar','Na água da chuva'],ans:2},
+    {q:'O que acontece quando a água salgada chega às raízes das plantas?',opts:['Ajuda a crescerem mais rápido','Não tem efeito','Puxa a água para FORA das raízes','As deixa maiores'],ans:2},
+    {q:'O que significa "solo estéril" na agricultura?',opts:['Terra muito fértil','Solo muito úmido','Solo que não consegue produzir nada por excesso de sal','Terra congelada'],ans:2},
+    {q:'Quando a água evapora do oceano, o que acontece com o sal?',opts:['Ele evapora também','Desaparece no ar','Fica para trás na água','Vira gás'],ans:2}
+  ],
+  dragZones:['Água Doce','Água Salobra','Água Salgada'],
+  dragItems:[
+    {text:'Lagos e rios',zone:0},{text:'Menos de 1% de sal',zone:0},
+    {text:'Onde rios encontram o mar',zone:1},{text:'Mistura de doce e salgada',zone:1},
+    {text:'Oceanos e mares',zone:2},{text:'Cerca de 3,5% de sal',zone:2}
+  ],
+  fills:[
+    {before:'Água com menos de 1% de sal é chamada de água ',blank:'doce',after:'.'},
+    {before:'A água salobra é encontrada em estuários onde rios encontram o ',blank:'mar',after:'.'},
+    {before:'Alta salinidade puxa a água para ',blank:'fora',after:' das raízes das plantas.'},
+    {before:'Terra que não consegue produzir nada por excesso de sal é chamada de solo ',blank:'estéril',after:'.'}
+  ]
+},
+{
+  emoji:'🌵', color:'topic-3',
+  accent:'#b56a00', accentLight:'#fff3e0', accentMid:'#e08a1a',
+  label:'Estações Secas e Conservação',
+  order:'Etapa 4 de 6',
+  heroDesc:'O que acontece quando para de chover? Aprenda sobre as estações secas e por que economizar água importa todos os dias.',
+  reading:[
+    {
+      title:'O que é uma Estação Seca?',icon:'☀️',
+      paras:[
+        'Em muitas partes do mundo, o ano é dividido em uma <strong>estação chuvosa</strong> (muita chuva) e uma <strong>estação seca</strong> (pouca ou nenhuma chuva). O Brasil, por exemplo, tem as duas!',
+        'Durante a estação seca, a precipitação cai significativamente. Isso significa menos água disponível para pessoas, animais e plantas — e pode causar problemas sérios.'
+      ],
+      highlight:'Estação seca = período longo com pouca ou nenhuma precipitação (chuva ou neve).',
+      list:[
+        'Rios e lagos encolhem ou até secam completamente.',
+        'Reservas de água subterrânea (aquíferos) param de ser reabastecidas.',
+        'Animais e plantas lutam para encontrar água suficiente.',
+        'Pessoas podem enfrentar falta de água.'
+      ]
+    },
+    {
+      title:'O Problema Subterrâneo: Aquíferos',icon:'🕳️',
+      paras:[
+        'Grande parte da nossa água potável não vem de rios — vem de <strong>aquíferos</strong>: imensos reservatórios subterrâneos de água presos em rochas e areia.',
+        'Normalmente, a chuva penetra no solo e lentamente reabastece esses tanques subterrâneos. Mas esse processo é <strong>muito lento</strong> — pode levar meses ou até anos.',
+        'Quando há estação seca, os aquíferos param de ser reabastecidos. Se continuarmos usando água no mesmo ritmo, a reserva subterrânea pode ficar perigosamente baixa.'
+      ],
+      funFact:'🌟 Pense num aquífero como uma esponja gigante subterrânea. A chuva a preenche devagar — mas podemos esvaziá-la muito mais rápido do que a natureza consegue reabastecê-la!',
+      funColor:'#fff3e0', funText:'#7a4500'
+    },
+    {
+      title:'Por que Economizar Água Todo Dia',icon:'💚',
+      paras:[
+        'A ideia principal é: <strong>devemos economizar água mesmo quando está chovendo</strong>! Por quê? Porque as reservas subterrâneas demoram muito para se recarregar.',
+        'Se todo mundo desperdiçar água durante a estação chuvosa, não haverá o suficiente armazenado para a estação seca.'
+      ],
+      list:[
+        'Tome banhos mais curtos.',
+        'Feche a torneira enquanto escova os dentes.',
+        'Conserte torneiras pingando — uma gota desperdiça milhares de litros por ano!',
+        'Regue as plantas à noite, para menos água evaporar.'
+      ],
+      highlight:'Conservação = proteger as reservas de água usando e desperdiçando menos. Cada gota conta — especialmente as subterrâneas!'
+    }
+  ],
+  flashcards:[
+    {term:'Estação Seca',def:'Período do ano com pouca ou nenhuma precipitação.',hint:'Oposto da estação chuvosa/das chuvas.'},
+    {term:'Aquífero',def:'Rocha ou areia subterrânea que armazena água. A chuva penetra lentamente para reabastecê-lo.',hint:'Humanos perfuram poços nos aquíferos para obter água potável.'},
+    {term:'Recarga',def:'O processo de a água da chuva penetrar no solo para reabastecer os aquíferos.',hint:'Muito lento — leva meses ou anos!'},
+    {term:'Conservação da Água',def:'Economizar e reduzir o uso de água para proteger as reservas para o futuro.',hint:'Economize água mesmo quando estiver chovendo!'},
+    {term:'Escassez de Água',def:'Quando não há água suficiente disponível para pessoas, animais e plantas.',hint:'Pode acontecer quando as estações secas duram muito.'}
+  ],
+  quiz:[
+    {q:'O que acontece com a precipitação durante a estação seca?',opts:['Aumenta muito','Permanece igual','Diminui significativamente','Só cai como neve'],ans:2},
+    {q:'O que é um aquífero?',opts:['Um tipo de nuvem','Rocha ou areia subterrânea que armazena água','Uma estação de tratamento de água','Um lago congelado'],ans:1},
+    {q:'Por que devemos economizar água mesmo quando está chovendo?',opts:['A chuva é suja','As reservas subterrâneas demoram muito para se reabastecer','A chuva é muito fria para beber','Os tanques de água transbordam facilmente'],ans:1},
+    {q:'Quanto tempo pode levar para os aquíferos se reabasteceram?',opts:['Algumas horas','Alguns dias','Meses ou até anos','Apenas uma semana'],ans:2},
+    {q:'Qual é um bom hábito de conservação de água?',opts:['Deixar a torneira aberta enquanto escova os dentes','Tomar banhos muito longos','Fechar a torneira quando não estiver usando','Regar plantas ao meio-dia'],ans:2}
+  ],
+  dragZones:['Causa','Efeito','Solução'],
+  dragItems:[
+    {text:'Estação seca — pouca chuva',zone:0},{text:'Água subterrânea para de se reabastecer',zone:0},
+    {text:'Nível de água nos lagos cai',zone:1},{text:'Reserva do aquífero fica baixa',zone:1},
+    {text:'Economizar água todo dia',zone:2},{text:'Consertar torneiras pingando',zone:2}
+  ],
+  fills:[
+    {before:'A estação seca é um período com muito pouca ',blank:'precipitação',after:'.'},
+    {before:'A água subterrânea é armazenada em camadas de rocha chamadas ',blank:'aquíferos',after:'.'},
+    {before:'A água da chuva penetra no solo lentamente para ',blank:'recarregar',after:' os aquíferos.'},
+    {before:'Devemos economizar água mesmo quando chove porque as reservas subterrâneas demoram muito para se ',blank:'reabastecer',after:'.'}
+  ]
+},
+{
+  emoji:'🌿', color:'topic-4',
+  accent:'#5c3d9e', accentLight:'#ede8fb', accentMid:'#7c5abf',
+  label:'Biomas Aquáticos',
+  order:'Etapa 5 de 6',
+  heroDesc:'A água é lar de bilhões de seres vivos! Explore os diferentes ecossistemas aquáticos do nosso planeta.',
+  reading:[
+    {
+      title:'O que é um Bioma?',icon:'🌍',
+      paras:[
+        'Um <strong>bioma</strong> é uma grande área com um ambiente específico — clima, plantas, animais e outros seres vivos. Você provavelmente já ouviu falar de biomas terrestres como florestas ou desertos.',
+        'Mas a água também tem biomas! Os cientistas os dividem com base em duas perguntas: <strong>a água se move?</strong> e <strong>é salgada ou doce?</strong>'
+      ]
+    },
+    {
+      title:'Lêntico vs. Lótico: Parado ou em Movimento?',icon:'🏞️',
+      paras:['Os biomas de água doce são divididos em dois grupos:'],
+      list:[
+        '<strong>Biomas Lênticos</strong> (do latim "lentus" = lento/parado): Água que NÃO se move. Exemplos: lagos, lagoas, pântanos. Dica de memória: Lêntico = Lento!',
+        '<strong>Biomas Lóticos</strong> (do latim "lotus" = fluindo): Água que está sempre em movimento. Exemplos: rios, riachos, córregos. Dica: Lótico = cheio de fluxo!'
+      ],
+      funFact:'🌟 Os lagos podem ser enormes! O Lago Superior na América do Norte é tão grande que parece um mar — mas é de água doce!',
+      funColor:'#ede8fb', funText:'#3a1a7a'
+    },
+    {
+      title:'Biomas Marinhos: O Mundo Salgado',icon:'🌊',
+      paras:[
+        'Os biomas marinhos são ambientes de água salgada — oceanos, mares e <strong>golfos</strong>.',
+        'Um <strong>golfo</strong> é uma grande extensão de água salgada quase completamente cercada por terra, com uma pequena abertura para o oceano. Os golfos costumam ser mais quentes e rasos que o oceano aberto — perfeitos para recifes de coral e tartarugas marinhas!',
+        'Os biomas marinhos cobrem mais de 70% da superfície da Terra e abrigam mais espécies do que qualquer outro bioma.'
+      ],
+      highlight:'Lêntico = água doce parada (lagos, lagoas). Lótico = água doce em movimento (rios, riachos). Marinho = água salgada (oceanos, mares, golfos).'
+    }
+  ],
+  flashcards:[
+    {term:'Bioma Lêntico',def:'Bioma de água doce com água parada. Exemplos: lagos, lagoas, pântanos.',hint:'Lêntico = Lento. Água parada!'},
+    {term:'Bioma Lótico',def:'Bioma de água doce com água em movimento. Exemplos: rios, riachos, córregos.',hint:'Lótico = cheio de fluxo. Água em movimento!'},
+    {term:'Bioma Marinho',def:'Ambiente de água salgada como oceanos, mares e golfos.',hint:'Cobre mais de 70% da superfície da Terra.'},
+    {term:'Golfo',def:'Grande extensão de água salgada quase cercada por terra, com pequena abertura para o oceano.',hint:'Mais quente e raso que o oceano aberto — ótimo para recifes de coral.'},
+    {term:'Biodiversidade',def:'A variedade de seres vivos diferentes (plantas, animais, micróbios) em um ecossistema.',hint:'Os biomas marinhos têm a maior biodiversidade da Terra.'}
+  ],
+  quiz:[
+    {q:'O que significa "lêntico"?',opts:['Água de movimento rápido','Água salgada','Água parada','Água congelada'],ans:2},
+    {q:'Qual é um exemplo de bioma lótico?',opts:['Um lago','Um pântano','Uma lagoa','Um rio'],ans:3},
+    {q:'O que diferencia um golfo do oceano aberto?',opts:['Não tem sal','É quase cercado por terra','Não tem vida marinha','É sempre congelado'],ans:1},
+    {q:'Qual tipo de bioma cobre mais de 70% da superfície da Terra?',opts:['Biomas lênticos','Biomas lóticos','Biomas marinhos','Biomas de deserto'],ans:2},
+    {q:'Lagos e lagoas pertencem a qual tipo de bioma?',opts:['Marinho','Lótico','Lêntico','Estuário'],ans:2}
+  ],
+  dragZones:['Lêntico (água parada)','Lótico (água em movimento)','Marinho (água salgada)'],
+  dragItems:[
+    {text:'Lagos e lagoas',zone:0},{text:'Pântanos',zone:0},
+    {text:'Rios e riachos',zone:1},{text:'Córregos',zone:1},
+    {text:'Oceanos e mares',zone:2},{text:'Golfos',zone:2}
+  ],
+  fills:[
+    {before:'Biomas lênticos têm água ',blank:'parada',after:', como lagos e lagoas.'},
+    {before:'Rios e riachos são exemplos de biomas ',blank:'lóticos',after:'.'},
+    {before:'Um golfo é uma grande extensão de água salgada quase cercada por ',blank:'terra',after:'.'},
+    {before:'Os biomas marinhos cobrem mais de ',blank:'70',after:'% da superfície da Terra.'}
+  ]
+},
+{
+  emoji:'🚰', color:'topic-5',
+  accent:'#c0392b', accentLight:'#fdecea', accentMid:'#e05545',
+  label:'Água Potável e Pântanos',
+  order:'Etapa 6 de 6',
+  heroDesc:'O que torna a água segura para beber? E como os pântanos mantêm nossa água e nosso planeta saudáveis?',
+  reading:[
+    {
+      title:'O que é Água Potável?',icon:'💧',
+      paras:[
+        'Nem toda água é segura para beber! "Potável" significa <strong>segura para o consumo humano</strong>.',
+        'A água potável precisa atender a três condições importantes:'
+      ],
+      list:[
+        '<strong>Livre de bactérias e parasitas:</strong> Seres vivos minúsculos que podem te deixar muito doente.',
+        '<strong>Baixo teor de produtos químicos tóxicos:</strong> Alguns químicos da indústria ou da agricultura podem contaminar a água.',
+        '<strong>Clara, sem cheiros ou cores estranhas:</strong> A água deve ser transparente e sem odor.'
+      ],
+      highlight:'A maioria da água na natureza NÃO é segura para beber sem tratamento. As estações de tratamento limpam e purificam a água antes que ela chegue à sua torneira.'
+    },
+    {
+      title:'Pântanos — Os Rins Naturais da Terra',icon:'🌿',
+      paras:[
+        'Um <strong>pântano</strong> é um tipo de zona úmida — uma área rasa coberta de água e muitas plantas como juncos e capins. Os pântanos podem parecer lugares lamacentos e bagunçados, mas são <strong>incrivelmente importantes</strong>!',
+        'Os cientistas chamam os pântanos de "Rins da Terra" porque — assim como seus rins limpam seu sangue — os pântanos <strong>filtram e limpam a água</strong> que passa por eles.'
+      ],
+      list:[
+        '<strong>Filtragem de poluentes:</strong> Plantas e solo nos pântanos retêm sujeira, produtos químicos e substâncias nocivas.',
+        '<strong>Controle de enchentes:</strong> Os pântanos absorvem grandes quantidades de água da chuva como uma esponja, prevenindo enchentes nas cidades próximas.',
+        '<strong>Biodiversidade:</strong> Os pântanos são berçários para filhotes de peixes, sapos, aves e muitos outros animais.'
+      ],
+      funFact:'🌟 Um único pântano pode filtrar milhões de litros de água por dia — de graça! Eles são as estações de tratamento de água da natureza.',
+      funColor:'#fdecea', funText:'#7a1a10'
+    },
+    {
+      title:'Por que Devemos Proteger os Pântanos',icon:'🛡️',
+      paras:[
+        'Infelizmente, muitos pântanos ao redor do mundo foram destruídos para construir estradas, casas e fazendas. Quando os pântanos desaparecem, as enchentes pioram, a qualidade da água cai e muitos animais perdem seus lares.',
+        'Proteger os pântanos é uma das <strong>coisas mais importantes</strong> que podemos fazer para manter nossa água limpa e nossas comunidades seguras contra enchentes.'
+      ],
+      highlight:'Os pântanos filtram a água, previnem enchentes e fornecem lares para animais selvagens — tudo ao mesmo tempo, de graça!'
+    }
+  ],
+  flashcards:[
+    {term:'Água Potável',def:'Água segura para consumo humano — limpa, clara e livre de bactérias e produtos químicos.',hint:'"Potável" vem do latim "potare" = beber.'},
+    {term:'Pântano',def:'Zona úmida rasa coberta de água e plantas. Chamado de "Rim da Terra" por filtrar a água.',hint:'Pântanos parecem lamacentos mas são incrivelmente importantes!'},
+    {term:'"Rins da Terra"',def:'Apelido dos pântanos porque filtram poluentes da água, assim como os rins filtram o sangue.',hint:'Os pântanos limpam a água naturalmente e de graça.'},
+    {term:'Controle de Enchentes',def:'Os pântanos absorvem água da chuva extra como uma esponja, prevenindo enchentes nas redondezas.',hint:'Sem pântanos, as enchentes seriam muito piores.'},
+    {term:'Biodiversidade',def:'Os pântanos são berçários para filhotes de peixes, aves e anfíbios — lar de muitas espécies.',hint:'Muitos animais dependem dos pântanos para se reproduzir.'}
+  ],
+  quiz:[
+    {q:'O que significa "potável"?',opts:['Água quente','Água salgada','Segura para beber','Água em movimento'],ans:2},
+    {q:'Qual é uma característica da água potável?',opts:['Deve ser salgada','Deve ser livre de bactérias e parasitas','Deve ser quente','Deve cheirar a minerais'],ans:1},
+    {q:'Por que os pântanos são chamados de "Rins da Terra"?',opts:['Armazenam água subterrânea','Filtram poluentes e limpam a água','Produzem apenas oxigênio','Impedem a evaporação'],ans:1},
+    {q:'Como os pântanos protegem as comunidades contra enchentes?',opts:['Bloqueiam rios com plantas','Absorvem água da chuva extra como uma esponja','Drenam a água para o oceano rapidamente','Congelam no inverno para parar o fluxo de água'],ans:1},
+    {q:'O que os pântanos fornecem para filhotes de peixes e anfíbios?',opts:['Espaço no oceano aberto','Ambientes muito salgados','Berçários para crescer e se reproduzir com segurança','Nada — pântanos são lamacentos demais'],ans:2}
+  ],
+  dragZones:['Água Potável (deve ser...)','Funções dos Pântanos'],
+  dragItems:[
+    {text:'Livre de bactérias',zone:0},{text:'Clara sem cheiro estranho',zone:0},
+    {text:'Sem produtos químicos tóxicos',zone:0},{text:'Filtra poluentes',zone:1},
+    {text:'Controla enchentes',zone:1},{text:'Berçário para filhotes de peixes',zone:1}
+  ],
+  fills:[
+    {before:'"Potável" significa água segura para ',blank:'beber',after:'.'},
+    {before:'Os pântanos são chamados de "',blank:'Rins',after:' da Terra" por filtrarem poluentes da água.'},
+    {before:'Os pântanos agem como ',blank:'esponjas',after:' gigantes absorvendo chuva extra para prevenir enchentes.'},
+    {before:'A água potável deve ser livre de ',blank:'bactérias',after:' e parasitas nocivos.'}
+  ]
+}
+]};
 
-var UI = {
+// ─── UI STRINGS ─────────────────────────────────────────────────
+var UI={
   en:{
     hdrTitle:'Natural Science — Year 5', hdrSub:'Water & Ecosystems',
-    acts:['Flashcards','Quiz','Drag & Drop','Fill the Blank'],
-    fcFront:'Term', fcBack:'Definition', fcTap:'Tap card to flip',
+    homeTitle:'Study Plan', homeSub:'Follow these 6 steps in order for the best results!',
+    homeTip:'💡 Tip: Read the introduction of each topic first, then practice with the activities!',
+    startTopic:'Start topic →',
+    stepLabel:'Step', ofLabel:'of',
+    acts:['Read','Flashcards','Quiz','Drag & Drop','Fill the Blank'],
+    backHome:'← All topics', backIntro:'← Back to reading',
+    readTitle:'Read & Learn', startActivities:'Ready? Start the activities! →',
+    fcFront:'Term', fcBack:'Definition', fcTap:'Tap to flip',
     dragInst:'Drag each item to the correct category.',
     btnCheck:'Check answers', btnReset:'Try again', btnNext:'Next →', btnRestart:'Try again',
     fillCheck:'Check', fillNext:'Next →',
-    correct:'Correct! ✓', wrong:'Not quite.',
-    scoreMsg:(s,t)=>`You got ${s} out of ${t}!`,
+    correct:'Correct! ✓', wrong:'Not quite. ',
+    ansIs:'The answer is: ',
+    scoreMsg:(s,t)=>s===t?`Perfect score! 🎉 ${s}/${t}`:`You got ${s} out of ${t}!`,
     fillCorrect:'✓ Correct!', fillWrong:(a)=>`Not quite. The answer is: ${a}`,
-    answerIs:'The answer is: '
+    planSteps:[
+      {why:'Start here — understanding how water turns to vapor is the foundation for everything else.'},
+      {why:'Now that you know evaporation, learn the full journey water takes around the planet.'},
+      {why:'Learn the different types of water and how salt changes everything.'},
+      {why:'Discover what happens when the water cycle is disrupted — and how we can help.'},
+      {why:'Explore the different water habitats and the life they support.'},
+      {why:'Finish strong! Learn what makes water safe and how nature cleans it for us.'}
+    ]
   },
   pt:{
     hdrTitle:'Ciências Naturais — 5º Ano', hdrSub:'Água e Ecossistemas',
-    acts:['Flashcards','Quiz','Arraste e Solte','Complete a Frase'],
-    fcFront:'Termo', fcBack:'Definição', fcTap:'Toque no cartão para virar',
+    homeTitle:'Plano de Estudos', homeSub:'Siga estas 6 etapas em ordem para os melhores resultados!',
+    homeTip:'💡 Dica: Leia a introdução de cada tema primeiro, depois pratique com as atividades!',
+    startTopic:'Começar tema →',
+    stepLabel:'Etapa', ofLabel:'de',
+    acts:['Leitura','Flashcards','Quiz','Arraste e Solte','Complete a Frase'],
+    backHome:'← Todos os temas', backIntro:'← Voltar para leitura',
+    readTitle:'Ler e Aprender', startActivities:'Pronto? Vamos para as atividades! →',
+    fcFront:'Termo', fcBack:'Definição', fcTap:'Toque para virar',
     dragInst:'Arraste cada item para a categoria correta.',
     btnCheck:'Verificar respostas', btnReset:'Tentar novamente', btnNext:'Próxima →', btnRestart:'Tentar novamente',
     fillCheck:'Verificar', fillNext:'Próxima →',
-    correct:'Correto! ✓', wrong:'Não foi dessa vez.',
-    scoreMsg:(s,t)=>`Você acertou ${s} de ${t}!`,
+    correct:'Correto! ✓', wrong:'Não foi dessa vez. ',
+    ansIs:'A resposta é: ',
+    scoreMsg:(s,t)=>s===t?`Nota máxima! 🎉 ${s}/${t}`:`Você acertou ${s} de ${t}!`,
     fillCorrect:'✓ Correto!', fillWrong:(a)=>`Não foi dessa vez. A resposta é: ${a}`,
-    answerIs:'A resposta é: '
+    planSteps:[
+      {why:'Comece aqui — entender como a água vira vapor é a base para tudo o mais.'},
+      {why:'Agora que você conhece a evaporação, aprenda a jornada completa da água pelo planeta.'},
+      {why:'Conheça os diferentes tipos de água e como o sal muda tudo.'},
+      {why:'Descubra o que acontece quando o ciclo da água é interrompido — e como podemos ajudar.'},
+      {why:'Explore os diferentes habitats aquáticos e a vida que eles sustentam.'},
+      {why:'Finalize com chave de ouro! Aprenda o que torna a água segura e como a natureza a limpa.'}
+    ]
   }
 };
 
-// State
-var state = {};
-function initState(ti){
-  state[ti] = state[ti] || {
-    flash:{idx:0,flipped:false},
-    quiz:{idx:0,score:0,answered:false},
-    drag:{built:false},
-    fill:{idx:0,answered:false}
-  };
+function u(){return UI[lang];}
+function topics(){return CONTENT[lang];}
+function tp(){return CONTENT[lang][curTopic];}
+
+function initState(i){
+  if(!state[i])state[i]={flash:{idx:0,flipped:false},quiz:{idx:0,score:0,answered:false},fill:{idx:0,answered:false}};
 }
 
-function u(){return UI[lang];}
-function t(){return TOPICS[lang][curTopic];}
-
+// ─── LANGUAGE ───────────────────────────────────────────────────
 function setLang(l){
   lang=l;
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
   document.getElementById('hdr-title').textContent=u().hdrTitle;
   document.getElementById('hdr-sub').textContent=u().hdrSub;
-  buildTopicBar(); buildMain();
+  buildTopicBar();
+  if(screen==='home') renderHome();
+  else if(screen==='intro') renderIntro();
+  else renderAct();
 }
 
+// ─── TOPIC BAR ──────────────────────────────────────────────────
 function buildTopicBar(){
   var bar=document.getElementById('topic-bar'); bar.innerHTML='';
-  TOPICS[lang].forEach(function(tp,i){
+  // Home tab
+  var home=document.createElement('button');
+  home.className='topic-tab'+(screen==='home'?' active':'');
+  home.innerHTML='🏠';
+  home.onclick=function(){screen='home';curTopic=-1;renderHome();buildTopicBar();};
+  bar.appendChild(home);
+  topics().forEach(function(t,i){
     var b=document.createElement('button');
-    b.className='topic-tab'+(i===curTopic?' active':'');
-    b.textContent=tp.label;
-    b.onclick=function(){curTopic=i;curAct='flash';buildMain();buildTopicBar();};
+    b.className='topic-tab'+(curTopic===i&&screen!=='home'?' active':'');
+    b.innerHTML='<span class="t-emoji">'+t.emoji+'</span>'+t.label;
+    b.onclick=function(){curTopic=i;screen='intro';curAct='read';renderIntro();buildTopicBar();};
     bar.appendChild(b);
   });
 }
 
-function buildMain(){
-  initState(curTopic);
-  var tp=t(); var ui=u();
-  var html='<div class="'+tp.color+'">';
-  html+='<div class="topic-header"><h2>'+tp.label+'</h2><p>'+tp.desc+'</p></div>';
-  html+='<div class="act-bar">';
-  ['flash','quiz','drag','fill'].forEach(function(a,i){
-    html+='<button class="act-tab'+(a===curAct?' active':'')+'" onclick="switchAct(\''+a+'\')">'+ui.acts[i]+'</button>';
+// ─── HOME SCREEN ────────────────────────────────────────────────
+function renderHome(){
+  screen='home'; curTopic=-1;
+  var ui=u(); var tps=topics();
+  var colors=['#0e7a6e','#1a6faa','#3a7d2e','#b56a00','#5c3d9e','#c0392b'];
+  var stepsHtml='';
+  tps.forEach(function(t,i){
+    stepsHtml+='<div class="sp-step">'+
+      '<div class="sp-num" style="background:'+colors[i]+';">'+(i+1)+'</div>'+
+      '<div class="sp-info">'+
+        '<h3>'+t.emoji+' '+t.label+'</h3>'+
+        '<p>'+ui.planSteps[i].why+'</p>'+
+      '</div>'+
+    '</div>';
   });
-  html+='</div>';
-  html+='<div style="margin-top:18px;">';
-  html+=buildFlash(tp,ui);
-  html+=buildQuiz(tp,ui);
-  html+=buildDrag(tp,ui);
-  html+=buildFill(tp,ui);
-  html+='</div></div>';
-  document.getElementById('main-content').innerHTML=html;
-  showAct(curAct);
-  if(curAct==='drag') setupDragListeners();
+  var cardsHtml='';
+  tps.forEach(function(t,i){
+    cardsHtml+='<div class="topic-card" onclick="goTopic('+i+')" style="border-color:'+colors[i]+'22;">'+
+      '<div class="tc-emoji">'+t.emoji+'</div>'+
+      '<div class="tc-num" style="color:'+colors[i]+';">'+ui.stepLabel+' '+(i+1)+' '+ui.ofLabel+' 6</div>'+
+      '<h3>'+t.label+'</h3>'+
+      '<p>'+t.heroDesc+'</p>'+
+      '<div class="tc-start" style="color:'+colors[i]+';">'+ui.startTopic+'</div>'+
+    '</div>';
+  });
+  document.getElementById('main').innerHTML=
+    '<div class="home-screen">'+
+    '<div class="home-hero"><h1>'+ui.hdrTitle+'</h1><p>'+ui.homeSub+'</p></div>'+
+    '<div class="study-plan">'+
+      '<h2>'+ui.homeTitle+'</h2>'+
+      '<p class="sp-sub">'+ui.homeSub+'</p>'+
+      stepsHtml+
+      '<div class="sp-tip" style="margin-top:14px;">'+ui.homeTip+'</div>'+
+    '</div>'+
+    '<div class="topic-cards-grid">'+cardsHtml+'</div>'+
+    '</div>';
 }
 
-function switchAct(a){curAct=a;buildMain();}
+function goTopic(i){curTopic=i;screen='intro';curAct='read';initState(i);renderIntro();buildTopicBar();}
 
-function showAct(a){
+// ─── INTRO / READING SCREEN ─────────────────────────────────────
+function renderIntro(){
+  screen='intro'; var t=tp(); var ui=u();
+  var readHtml='';
+  t.reading.forEach(function(sec){
+    var inner='<h3><span>'+sec.icon+'</span> '+sec.title+'</h3>';
+    if(sec.highlight) inner+='<div class="reading-highlight" style="background:'+t.accentLight+';border-left-color:'+t.accentMid+';color:'+t.accent+';">'+sec.highlight+'</div>';
+    if(sec.paras) sec.paras.forEach(function(p){inner+='<p class="reading-para">'+p+'</p>';});
+    if(sec.list){
+      inner+='<ul class="reading-list">';
+      sec.list.forEach(function(li){inner+='<li>'+li+'</li>';});
+      inner+='</ul>';
+    }
+    if(sec.funFact) inner+='<div class="fun-fact" style="background:'+sec.funColor+';color:'+sec.funText+';">'+sec.funFact+'</div>';
+    readHtml+='<div class="reading-card">'+inner+'</div>';
+  });
+  document.getElementById('main').innerHTML=
+    '<div class="intro-screen">'+
+    '<button class="intro-back" onclick="renderHome();buildTopicBar();">'+ui.backHome+'</button>'+
+    '<div class="intro-hero" style="background:linear-gradient(135deg,'+t.accent+','+t.accentMid+');">'+
+      '<div class="intro-order">'+t.order+'</div>'+
+      '<h2>'+t.emoji+' '+t.label+'</h2>'+
+      '<p>'+t.heroDesc+'</p>'+
+    '</div>'+
+    readHtml+
+    '<button class="intro-cta" style="background:'+t.accent+';" onclick="goActivities()">'+ui.startActivities+'</button>'+
+    '</div>';
+}
+
+function goActivities(){screen='act';curAct='flash';renderAct();}
+
+// ─── ACTIVITY SCREEN ────────────────────────────────────────────
+function renderAct(){
+  screen='act'; initState(curTopic);
+  var t=tp(); var ui=u();
+  var tabsHtml='';
+  ['read','flash','quiz','drag','fill'].forEach(function(a,i){
+    var lbl=i===0?ui.acts[0]:ui.acts[i];
+    tabsHtml+='<button class="act-tab'+(a===curAct?' active':'')+'" style="'+(a===curAct?'background:'+t.accent+';border-color:'+t.accent+';':'')+'" onclick="switchAct(\''+a+'\')">'+lbl+'</button>';
+  });
+  var sections=buildFlashHTML(t,ui)+buildQuizHTML(t,ui)+buildDragHTML(t,ui)+buildFillHTML(t,ui);
+  document.getElementById('main').innerHTML=
+    '<div class="act-screen">'+
+    '<button class="act-back" onclick="renderIntro();buildTopicBar();">'+ui.backIntro+'</button>'+
+    '<div class="act-header">'+
+      '<div class="act-header-left"><h3>'+t.emoji+' '+t.label+'</h3><p>'+t.order+'</p></div>'+
+    '</div>'+
+    '<div class="act-bar">'+tabsHtml+'</div>'+
+    sections+
+    '</div>';
+  showActSection(curAct);
+  if(curAct==='drag') setupDrag();
+}
+
+function switchAct(a){
+  if(a==='read'){renderIntro();return;}
+  curAct=a; renderAct();
+}
+
+function showActSection(a){
   ['flash','quiz','drag','fill'].forEach(function(s){
     var el=document.getElementById('act-'+s);
-    if(el) el.classList.toggle('active',s===a);
+    if(el)el.classList.toggle('active',s===a);
   });
 }
 
-// FLASHCARDS
-function buildFlash(tp,ui){
-  var s=state[curTopic].flash; var cards=tp.flashcards; var c=cards[s.idx];
-  return '<div class="act-section'+(curAct==='flash'?' active':'')+'" id="act-flash">'+
+// ─── FLASHCARDS ─────────────────────────────────────────────────
+function buildFlashHTML(t,ui){
+  var s=state[curTopic].flash; var c=t.flashcards[s.idx];
+  return '<div class="act-section" id="act-flash">'+
     '<div class="fc-wrap" onclick="flipCard()">'+
     '<div class="fc-inner'+(s.flipped?' flipped':'')+'" id="fc-inner">'+
     '<div class="fc-face fc-front"><div class="fc-badge">'+ui.fcFront+'</div><div class="card-term">'+c.term+'</div></div>'+
-    '<div class="fc-face fc-back"><div class="fc-badge">'+ui.fcBack+'</div><div class="card-def">'+c.def+'</div><div class="card-hint">'+c.hint+'</div></div>'+
-    '</div></div>'+
+    '<div class="fc-face fc-back" style="background:'+t.accentLight+';border:2px solid '+t.accentMid+';">'+
+      '<div class="fc-badge">'+ui.fcBack+'</div>'+
+      '<div class="card-def" style="color:'+t.accent+';">'+c.def+'</div>'+
+      '<div class="card-hint">'+c.hint+'</div>'+
+    '</div></div></div>'+
     '<div class="fc-nav">'+
     '<button class="btn-circle" onclick="event.stopPropagation();prevCard()">←</button>'+
-    '<span class="fc-count">'+(s.idx+1)+' / '+cards.length+'</span>'+
+    '<span class="fc-count">'+(s.idx+1)+' / '+t.flashcards.length+'</span>'+
     '<button class="btn-circle" onclick="event.stopPropagation();nextCard()">→</button>'+
     '</div>'+
     '<p class="fc-hint-text">'+ui.fcTap+'</p>'+
     '</div>';
 }
 function flipCard(){var s=state[curTopic].flash;s.flipped=!s.flipped;var el=document.getElementById('fc-inner');if(el)el.classList.toggle('flipped',s.flipped);}
-function nextCard(){var s=state[curTopic].flash;s.flipped=false;s.idx=(s.idx+1)%t().flashcards.length;buildMain();}
-function prevCard(){var s=state[curTopic].flash;s.flipped=false;s.idx=(s.idx-1+t().flashcards.length)%t().flashcards.length;buildMain();}
+function nextCard(){var s=state[curTopic].flash;s.flipped=false;s.idx=(s.idx+1)%tp().flashcards.length;renderAct();}
+function prevCard(){var s=state[curTopic].flash;s.flipped=false;s.idx=(s.idx-1+tp().flashcards.length)%tp().flashcards.length;renderAct();}
 
-// QUIZ
-function buildQuiz(tp,ui){
+// ─── QUIZ ───────────────────────────────────────────────────────
+function buildQuizHTML(t,ui){
   var s=state[curTopic].quiz;
-  if(s.idx>=tp.quiz.length){
-    return '<div class="act-section'+(curAct==='quiz'?' active':'')+'" id="act-quiz">'+
+  if(s.idx>=t.quiz.length){
+    var c=t.accent;
+    return '<div class="act-section" id="act-quiz">'+
       '<div class="score-box">'+
-      '<div class="score-circle"><div class="score-num">'+s.score+'/'+tp.quiz.length+'</div></div>'+
-      '<div class="score-msg">'+ui.scoreMsg(s.score,tp.quiz.length)+'</div>'+
-      '<button class="btn btn-primary" onclick="restartQuiz()">'+ui.btnRestart+'</button>'+
+      '<div class="score-ring" style="background:'+t.accentLight+';border-color:'+t.accent+';">'+
+        '<div class="score-num" style="color:'+t.accent+';">'+s.score+'/'+t.quiz.length+'</div>'+
+      '</div>'+
+      '<div class="score-msg">'+ui.scoreMsg(s.score,t.quiz.length)+'</div>'+
+      '<button class="btn btn-primary" style="background:'+t.accent+';" onclick="restartQuiz()">'+ui.btnRestart+'</button>'+
       '</div></div>';
   }
-  var q=tp.quiz[s.idx]; var pct=Math.round((s.idx/tp.quiz.length)*100);
+  var q=t.quiz[s.idx]; var pct=Math.round((s.idx/t.quiz.length)*100);
   var opts=''; q.opts.forEach(function(o,i){
     opts+='<button class="quiz-opt" id="qo'+i+'" onclick="selectAns('+i+')" '+(s.answered?'disabled':'')+'>'+o+'</button>';
   });
-  return '<div class="act-section'+(curAct==='quiz'?' active':'')+'" id="act-quiz">'+
-    '<div class="quiz-prog-text">'+(lang==='en'?'Question ':'Pergunta ')+(s.idx+1)+' '+(lang==='en'?'of ':'de ')+tp.quiz.length+'</div>'+
-    '<div class="quiz-prog-bar"><div class="quiz-prog-fill" style="width:'+pct+'%"></div></div>'+
+  return '<div class="act-section" id="act-quiz">'+
+    '<div class="quiz-prog-wrap">'+
+    '<div class="quiz-prog-text">'+(lang==='en'?'Question ':'Pergunta ')+(s.idx+1)+' '+(lang==='en'?'of ':'de ')+t.quiz.length+'</div>'+
+    '<div class="quiz-prog-bar"><div class="quiz-prog-fill" style="width:'+pct+'%;background:'+t.accent+';"></div></div>'+
+    '</div>'+
     '<div class="quiz-q">'+q.q+'</div>'+
-    '<div class="quiz-opts" id="quiz-opts">'+opts+'</div>'+
+    '<div class="quiz-opts">'+opts+'</div>'+
     '<div class="quiz-fb" id="quiz-fb"></div>'+
-    '<div class="btn-row"><button class="btn btn-primary" id="btn-qnext" onclick="nextQuestion()" style="display:none;">'+ui.btnNext+'</button></div>'+
+    '<div class="btn-row"><button class="btn btn-primary" id="btn-qnext" style="background:'+t.accent+';display:none;" onclick="nextQuestion()">'+ui.btnNext+'</button></div>'+
     '</div>';
 }
 function selectAns(i){
   var s=state[curTopic].quiz; if(s.answered)return;
-  var q=t().quiz[s.idx]; s.answered=true;
+  var q=tp().quiz[s.idx]; s.answered=true;
   document.querySelectorAll('.quiz-opt').forEach(function(b,idx){
     b.disabled=true;
     if(idx===q.ans)b.classList.add('correct');
@@ -666,47 +1277,47 @@ function selectAns(i){
   });
   var fb=document.getElementById('quiz-fb');
   if(i===q.ans){s.score++;fb.textContent=u().correct;fb.className='quiz-fb show ok';}
-  else{fb.textContent=u().wrong+' '+u().answerIs+q.opts[q.ans];fb.className='quiz-fb show no';}
+  else{fb.textContent=u().wrong+u().ansIs+q.opts[q.ans];fb.className='quiz-fb show no';}
   var nb=document.getElementById('btn-qnext');
-  if(nb){nb.style.display='inline-block';nb.textContent=s.idx+1<t().quiz.length?u().btnNext:(lang==='en'?'See results':'Ver resultado');}
+  if(nb){nb.style.display='inline-block';nb.textContent=s.idx+1<tp().quiz.length?u().btnNext:(lang==='en'?'See results':'Ver resultado');}
 }
-function nextQuestion(){var s=state[curTopic].quiz;s.idx++;s.answered=false;buildMain();}
-function restartQuiz(){state[curTopic].quiz={idx:0,score:0,answered:false};buildMain();}
+function nextQuestion(){var s=state[curTopic].quiz;s.idx++;s.answered=false;renderAct();}
+function restartQuiz(){state[curTopic].quiz={idx:0,score:0,answered:false};renderAct();}
 
-// DRAG
-var dragSrc=null;
-function buildDrag(tp,ui){
-  var items=tp.dragItems; var zones=tp.dragZones;
+// ─── DRAG & DROP ────────────────────────────────────────────────
+function buildDragHTML(t,ui){
+  var items=t.dragItems; var zones=t.dragZones;
   var chips=''; items.forEach(function(it,i){
     chips+='<div class="drag-chip" draggable="true" id="dc'+i+'" data-idx="'+i+'" data-zone="'+it.zone+'">'+it.text+'</div>';
   });
   var dzs=''; zones.forEach(function(z,zi){
-    dzs+='<div class="drop-zone" id="dz'+zi+'" data-zone="'+zi+'"><div class="dz-label">'+z+'</div><div class="dz-chips" id="dzc'+zi+'"></div></div>';
+    dzs+='<div class="drop-zone" id="dz'+zi+'" data-zone="'+zi+'">'+
+      '<div class="dz-label" style="color:'+t.accent+';">'+z+'</div>'+
+      '<div class="dz-chips" id="dzc'+zi+'"></div></div>';
   });
-  return '<div class="act-section'+(curAct==='drag'?' active':'')+'" id="act-drag">'+
+  return '<div class="act-section" id="act-drag">'+
     '<p class="drag-inst">'+ui.dragInst+'</p>'+
     '<div class="drag-bank" id="drag-bank">'+chips+'</div>'+
     '<div class="drop-zones">'+dzs+'</div>'+
     '<div class="btn-row">'+
-    '<button class="btn btn-primary" id="btn-check-drag" onclick="checkDrag()">'+ui.btnCheck+'</button>'+
-    '<button class="btn" id="btn-reset-drag" onclick="resetDrag()" style="display:none;">'+ui.btnReset+'</button>'+
+    '<button class="btn btn-primary" style="background:'+t.accent+';" onclick="checkDrag()">'+ui.btnCheck+'</button>'+
+    '<button class="btn" id="btn-rdrag" onclick="resetDrag()" style="display:none;">'+ui.btnReset+'</button>'+
     '</div></div>';
 }
-function setupDragListeners(){
+function setupDrag(){
   document.querySelectorAll('.drag-chip').forEach(function(el){
-    el.addEventListener('dragstart',function(e){dragSrc=el;e.dataTransfer.setData('text',el.id);el.classList.add('dragging');});
-    el.addEventListener('dragend',function(){el.classList.remove('dragging');});
+    el.addEventListener('dragstart',function(e){dragSrc=el;e.dataTransfer.setData('text',el.id);});
+    el.addEventListener('dragend',function(){});
   });
-  var zones=[document.getElementById('drag-bank')];
-  document.querySelectorAll('.drop-zone').forEach(function(z){zones.push(z);});
-  zones.forEach(function(z){
+  var allZones=[document.getElementById('drag-bank')];
+  document.querySelectorAll('.drop-zone').forEach(function(z){allZones.push(z);});
+  allZones.forEach(function(z){
     z.addEventListener('dragover',function(e){e.preventDefault();z.classList.add('over');});
     z.addEventListener('dragleave',function(){z.classList.remove('over');});
     z.addEventListener('drop',function(e){
       e.preventDefault();z.classList.remove('over');
       var id=e.dataTransfer.getData('text');
-      var el=document.getElementById(id);
-      if(!el)return;
+      var el=document.getElementById(id); if(!el)return;
       el.classList.remove('correct','wrong');
       var target=z.id==='drag-bank'?z:(z.querySelector('.dz-chips')||z);
       target.appendChild(el);
@@ -717,22 +1328,24 @@ function checkDrag(){
   document.querySelectorAll('.drop-zone').forEach(function(zone){
     var zi=parseInt(zone.dataset.zone);
     zone.querySelectorAll('.drag-chip').forEach(function(chip){
-      var correct=parseInt(chip.dataset.zone)===zi;
-      chip.classList.toggle('correct',correct);chip.classList.toggle('wrong',!correct);
+      var ok=parseInt(chip.dataset.zone)===zi;
+      chip.classList.toggle('correct',ok);chip.classList.toggle('wrong',!ok);
     });
   });
-  document.getElementById('btn-reset-drag').style.display='inline-block';
+  var rb=document.getElementById('btn-rdrag');if(rb)rb.style.display='inline-block';
 }
-function resetDrag(){buildMain();if(curAct==='drag')setupDragListeners();}
+function resetDrag(){renderAct();if(curAct==='drag')setupDrag();}
 
-// FILL
-function buildFill(tp,ui){
-  var s=state[curTopic].fill; var f=tp.fills[s.idx%tp.fills.length];
-  return '<div class="act-section'+(curAct==='fill'?' active':'')+'" id="act-fill">'+
-    '<div class="fill-prog">'+(lang==='en'?'Question ':'Pergunta ')+(s.idx%tp.fills.length+1)+' '+(lang==='en'?'of ':'de ')+tp.fills.length+'</div>'+
-    '<div class="fill-sentence">'+f.before+'<input class="blank-inp" id="fill-inp" type="text" autocomplete="off" />'+f.after+'</div>'+
+// ─── FILL IN THE BLANK ──────────────────────────────────────────
+function buildFillHTML(t,ui){
+  var s=state[curTopic].fill; var idx=s.idx%t.fills.length; var f=t.fills[idx];
+  return '<div class="act-section" id="act-fill">'+
+    '<div class="fill-prog">'+(lang==='en'?'Question ':'Pergunta ')+(idx+1)+' '+(lang==='en'?'of ':'de ')+t.fills.length+'</div>'+
+    '<div class="fill-sentence">'+f.before+
+    '<input class="blank-inp" id="fill-inp" type="text" autocomplete="off" style="border-bottom-color:'+t.accentMid+';" />'+
+    f.after+'</div>'+
     '<div class="btn-row">'+
-    '<button class="btn btn-primary" id="btn-cf" onclick="checkFill()">'+ui.fillCheck+'</button>'+
+    '<button class="btn btn-primary" id="btn-cf" style="background:'+t.accent+';" onclick="checkFill()">'+ui.fillCheck+'</button>'+
     '<button class="btn" id="btn-nf" onclick="nextFill()" style="display:none;">'+ui.fillNext+'</button>'+
     '</div>'+
     '<div class="fill-fb" id="fill-fb"></div>'+
@@ -740,26 +1353,29 @@ function buildFill(tp,ui){
 }
 function checkFill(){
   var s=state[curTopic].fill; if(s.answered)return;
-  var tp=t(); var f=tp.fills[s.idx%tp.fills.length];
+  var f=tp().fills[s.idx%tp().fills.length];
   var inp=document.getElementById('fill-inp'); if(!inp)return;
   var val=inp.value.trim().toLowerCase(); var ans=f.blank.toLowerCase();
+  var ok=val===ans||val===ans.replace(/[^a-z0-9áéíóúãõâêôàüç]/g,'');
   var fb=document.getElementById('fill-fb');
-  var ok=val===ans||val===ans.replace(/[^a-záéíóúãõâêôàüç]/g,'');
   if(ok){inp.classList.add('correct');fb.textContent=u().fillCorrect;fb.className='fill-fb show ok';}
   else{inp.classList.add('wrong');fb.textContent=u().fillWrong(f.blank);fb.className='fill-fb show no';}
   s.answered=true;
-  document.getElementById('btn-cf').style.display='none';
-  var nb=document.getElementById('btn-nf');
-  nb.style.display='inline-block';
-  nb.textContent=s.idx+1<tp.fills.length?u().fillNext:(lang==='en'?'Restart':'Recomeçar');
+  var cf=document.getElementById('btn-cf');if(cf)cf.style.display='none';
+  var nf=document.getElementById('btn-nf');if(nf){
+    nf.style.display='inline-block';
+    nf.textContent=s.idx+1<tp().fills.length?u().fillNext:(lang==='en'?'Restart':'Recomeçar');
+  }
 }
 function nextFill(){
-  var s=state[curTopic].fill; s.idx++; s.answered=false; buildMain();
+  var s=state[curTopic].fill; s.idx++; s.answered=false; renderAct();
 }
-document.addEventListener('keydown',function(e){if(e.key==='Enter'){var inp=document.getElementById('fill-inp');if(document.activeElement===inp)checkFill();}});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Enter'){var inp=document.getElementById('fill-inp');if(document.activeElement===inp)checkFill();}
+});
 
-// INIT
-buildTopicBar(); buildMain();
+// ─── INIT ───────────────────────────────────────────────────────
+buildTopicBar(); renderHome();
 </script>
 </body>
 </html>
